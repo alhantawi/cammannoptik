@@ -7,9 +7,8 @@ import { X } from "lucide-react";
 export const WhatsAppButton: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(true);
 
-  // Clean phone number for WhatsApp URL (e.g. 495118974320)
-  const rawPhone = contactInfo.phone.replace(/[^0-9]/g, "");
-  const whatsappUrl = `https://wa.me/${rawPhone}?text=${encodeURIComponent(
+  // Direct WhatsApp Number: +49 172 7442964
+  const whatsappUrl = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(
     "Hallo Cammann Optik Team, ich interessiere mich für eine meisterliche Sehanalyse / Fassungsberatung und möchte einen Termin anfragen."
   )}`;
 

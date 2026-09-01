@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href={`https://wa.me/${contactInfo.phone.replace(/[^0-9]/g, "")}`}
+                  href={`https://wa.me/${contactInfo.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white transition-colors group"

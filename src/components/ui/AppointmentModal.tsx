@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useAppointment } from "@/context/AppointmentContext";
 import { serviceTiers } from "@/data/services";
 import { X, CheckCircle, Calendar, Clock, User, Mail, Phone, ArrowRight, Sparkles } from "lucide-react";
+import { contactInfo } from "@/data/navigation";
 import { CammannLogo } from "./CammannLogo";
 
 const AVAILABLE_TIMES = ["09:30", "11:00", "14:00", "15:30", "17:00"];
@@ -134,7 +135,7 @@ export const AppointmentModal: React.FC = () => {
                   Betreuung persönlich durch den Augenoptikermeister. Ohne Wartezeit.
                 </p>
                 <a
-                  href="https://wa.me/495118974320?text=Hallo%20Cammann%20Optik%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20anfragen."
+                  href={`https://wa.me/${contactInfo.whatsapp}?text=Hallo%20Cammann%20Optik%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20anfragen.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-mono text-[#25D366] hover:underline font-bold shrink-0"
