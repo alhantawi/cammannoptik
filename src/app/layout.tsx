@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppointmentProvider } from "@/context/AppointmentContext";
 import { AppointmentModal } from "@/components/ui/AppointmentModal";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -33,27 +34,31 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CAMMANN Optik | Meisterbetrieb für Augenoptik & 3D-Wellenfront",
+  title: "Cammann Optik Hannover | Meisterbetrieb für biometrische Augenoptik",
   description:
-    "Exzellentes Sehen ist keine Frage des Standards, sondern der Persönlichkeit. Modernste 3D-Wellenfront-Refraktion, Binokularanalyse und handgefertigte Brillenfassungen in Hannover.",
+    "Inhabergeführter Meisterbetrieb für biometrische 3D-Augenglasbestimmung (Rodenstock DNEye®), handgefertigte Designerfassungen (Lunor, Maui Jim, Escada, Morel) und persönliche Sehanalysen in Hannover.",
   keywords: [
     "Optiker Hannover",
-    "Augenoptikermeister",
-    "Wellenfront Sehprüfung",
-    "Binokularsehen MKH",
-    "Myopie Management",
-    "Gleitsichtbrillen Manufaktur",
-    "Cammann Optik"
+    "Augenoptikermeister Shaikh Ali",
+    "Cammann Optik Hannover",
+    "Rodenstock DNEye Scanner",
+    "Lunor Brillen Hannover",
+    "Biometrische Brillengläser",
+    "Gleitsichtbrille Meister"
   ],
-  authors: [{ name: "CAMMANN Optik" }],
+  authors: [{ name: "Cammann Optik" }],
   openGraph: {
-    title: "CAMMANN Optik | Meisterbetrieb für ganzheitliche Augenoptik",
+    title: "Cammann Optik Hannover | Meisterbetrieb für biometrische Augenoptik",
     description:
       "Wir verbinden modernste 3D-Messtechnik mit handwerklicher Meisterqualität für Ihr perfektes Seherlebnis.",
     url: "https://cammann-optik.de",
-    siteName: "CAMMANN Optik",
+    siteName: "Cammann Optik",
     locale: "de_DE",
     type: "website"
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: "/icon.svg"
   }
 };
 
@@ -67,11 +72,12 @@ export default function RootLayout({
       lang="de"
       className={`${outfit.variable} ${cormorant.variable} ${plusJakarta.variable} ${spaceMono.variable} scroll-smooth antialiased`}
     >
-      <body className="bg-[#F2F0E9] text-[#1A1A1A] font-jakarta selection:bg-[#2E4036] selection:text-white min-h-screen relative">
+      <body className="bg-[#FAF8F5] text-[#161719] font-jakarta selection:bg-[#D13426] selection:text-white min-h-screen relative">
         <AppointmentProvider>
           <NoiseOverlay />
           {children}
           <AppointmentModal />
+          <WhatsAppButton />
         </AppointmentProvider>
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, MapPin, CheckCircle2 } from "lucide-react";
 import { useAppointment } from "@/context/AppointmentContext";
 import gsap from "gsap";
 
@@ -11,13 +11,13 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".hero-elem", {
-        y: 40,
+      gsap.from(".hero-anim", {
+        y: 35,
         opacity: 0,
         stagger: 0.12,
         duration: 1.1,
         ease: "power3.out",
-        delay: 0.2
+        delay: 0.15
       });
     }, containerRef);
 
@@ -27,86 +27,86 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100dvh] w-full flex items-end pb-20 md:pb-28 px-6 md:px-16 overflow-hidden bg-[#1A1A1A]"
+      className="relative min-h-[100dvh] w-full flex items-end pb-16 md:pb-24 px-6 md:px-16 overflow-hidden bg-[#161719]"
     >
-      {/* Background Image & Multi-layer cinematic overlays */}
+      {/* Background with Real Cammann Studio Photo */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1470115636405-2099b22201b1?q=80&w=2070&auto=format&fit=crop"
-          alt="Atmosphärischer Waldhintergrund Cammann Optik"
-          className="w-full h-full object-cover scale-105"
+          src="/2.jpeg"
+          alt="Cammann Optik Hannover Meisterstudio Interieur"
+          className="w-full h-full object-cover scale-105 object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#2E4036]/80 to-[#1A1A1A]/40 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[#1A1A1A]/35" />
-      </div>
-
-      {/* Decorative Radial Grid / Precision Lens Circles */}
-      <div className="absolute right-10 top-1/4 -translate-y-1/2 w-96 h-96 pointer-events-none opacity-20 hidden lg:block">
-        <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_60s_linear_infinite]" fill="none" stroke="#F2F0E9" strokeWidth="0.5">
-          <circle cx="100" cy="100" r="90" strokeDasharray="3 3" />
-          <circle cx="100" cy="100" r="70" />
-          <circle cx="100" cy="100" r="50" strokeDasharray="6 2" />
-          <circle cx="100" cy="100" r="30" />
-          <line x1="100" y1="0" x2="100" y2="200" strokeWidth="0.3" />
-          <line x1="0" y1="100" x2="200" y2="100" strokeWidth="0.3" />
-        </svg>
+        {/* Luxury Vignette & Dark Studio Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#161719] via-[#161719]/80 to-[#161719]/40" />
+        <div className="absolute inset-0 bg-[#161719]/30 backdrop-blur-[1px]" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-5xl text-white pt-32">
-        {/* Badge */}
-        <div className="hero-elem inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 font-mono text-xs uppercase tracking-widest text-[#F2F0E9] mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#CC5833] animate-[barPulse_1s_infinite_alternate]" />
-          <span>Meisterbetrieb für ganzheitliche Augenoptik</span>
-        </div>
+      <div className="relative z-10 w-full max-w-6xl text-white pt-36">
+        
+        {/* Top Badges */}
+        <div className="hero-anim flex flex-wrap items-center gap-3 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 font-mono text-xs uppercase tracking-widest text-[#FAF8F5]">
+            <span className="w-2 h-2 rounded-full bg-[#D13426] animate-pulse" />
+            <span>Inhabergeführtes Fachgeschäft</span>
+          </div>
 
-        {/* Headlines */}
-        <h1 className="hero-elem font-outfit text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.08] tracking-tight mb-3">
-          Exzellentes Sehen ist keine <br className="hidden sm:inline" />
-          Frage des Standards.
-        </h1>
-        <h2 className="hero-elem font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#F2F0E9]/95 leading-[1.08] mb-10 font-normal">
-          Sondern der Persönlichkeit.
-        </h2>
-
-        {/* Subtitle & Actions Bar */}
-        <div className="hero-elem flex flex-col lg:flex-row gap-8 lg:items-center justify-between border-t border-white/20 pt-8 mt-6">
-          <p className="text-base sm:text-lg md:text-xl font-light max-w-xl text-white/85 leading-relaxed">
-            Wir nehmen uns Zeit für präzise 3D-Wellenfrontanalysen, individuelle Beratung und Sehlösungen, die perfekt zu Ihrem Leben passen.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
-            <button
-              onClick={() => openBooking("meister")}
-              className="magnetic-btn bg-[#CC5833] hover:bg-[#b04a29] text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-3 whitespace-nowrap shadow-xl shadow-[#CC5833]/30 cursor-pointer"
-            >
-              <span>Jetzt Beratungstermin vereinbaren</span>
-              <ArrowRight size={18} />
-            </button>
-
-            <a
-              href="#philosophie"
-              className="px-6 py-4 rounded-full font-medium text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors text-center border border-white/15"
-            >
-              Mehr erfahren
-            </a>
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D13426]/20 border border-[#D13426]/40 font-mono text-xs text-white">
+            <Sparkles size={13} className="text-[#D13426]" />
+            <span>Rodenstock Biometrie-Zentrum</span>
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <div className="hero-elem flex flex-wrap items-center gap-6 mt-8 pt-4 text-xs font-mono text-white/60">
-          <span className="flex items-center gap-2">
-            <ShieldCheck size={14} className="text-[#CC5833]" />
-            100% Meisterprüfung & Betreuung
+        {/* Headlines */}
+        <h1 className="hero-anim font-outfit text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight mb-4 text-white">
+          Sehen auf <br className="hidden sm:inline" />
+          <span className="font-serif italic font-normal text-[#FAF8F5] text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
+            höchstem Niveau.
           </span>
-          <span className="hidden sm:inline">•</span>
-          <span className="flex items-center gap-2">
-            <Sparkles size={14} className="text-[#CC5833]" />
-            0.01 dpt Wellenfront-Präzision
-          </span>
-          <span className="hidden sm:inline">•</span>
-          <span>Hannover Mitte</span>
+        </h1>
+
+        <p className="hero-anim text-lg sm:text-xl md:text-2xl font-light text-white/85 max-w-2xl leading-relaxed mb-10">
+          Wir verbinden individuelle handwerkliche Meisterberatung mit biometrischer 3D-Vermessung und handverlesenen Designer-Brillenfassungen.
+        </p>
+
+        {/* CTA Actions and Studio Pill */}
+        <div className="hero-anim flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-white/15">
+          <button
+            onClick={() => openBooking("meister")}
+            className="luxury-btn bg-[#D13426] hover:bg-[#B5281B] text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-3 text-sm uppercase tracking-wider shadow-2xl shadow-[#D13426]/30 cursor-pointer"
+          >
+            <span>Persönlichen Meistertermin buchen</span>
+            <ArrowRight size={18} />
+          </button>
+
+          <a
+            href="#studio-tour"
+            className="px-7 py-4 rounded-full font-medium text-sm text-white/80 hover:text-white bg-white/10 hover:bg-white/15 backdrop-blur-sm transition-all text-center border border-white/15"
+          >
+            Studio entdecken
+          </a>
         </div>
+
+        {/* Bottom Trust & Feature Highlights */}
+        <div className="hero-anim grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/10 text-xs text-white/75 font-mono">
+          <div className="flex items-center gap-2">
+            <ShieldCheck size={16} className="text-[#D13426] shrink-0" />
+            <span>100% Augenoptikermeister</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={16} className="text-[#D13426] shrink-0" />
+            <span>Rodenstock DNEye® Biometrie</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Sparkles size={16} className="text-[#D13426] shrink-0" />
+            <span>Lunor & Morel Manufakturen</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin size={16} className="text-[#D13426] shrink-0" />
+            <span>Zentrale Lage Hannover</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

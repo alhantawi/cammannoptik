@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#232529"/>
+      <stop offset="100%" stop-color="#161719"/>
+    </linearGradient>
+    <linearGradient id="favRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5392D"/>
+      <stop offset="100%" stop-color="#B51E2B"/>
+    </linearGradient>
+    <linearGradient id="favArc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8E9094" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#F3F4F6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8E9094" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Luxury Squircle Background -->
+  <rect width="64" height="64" rx="16" fill="url(#favBg)"/>
+
+  <!-- Top Lens Arc -->
+  <path d="M 10 20 C 22 11, 42 11, 54 20 C 42 14, 22 14, 10 20 Z" fill="url(#favArc)"/>
+
+  <!-- Bottom Lens Arc -->
+  <path d="M 10 44 C 22 53, 42 53, 54 44 C 42 50, 22 50, 10 44 Z" fill="url(#favArc)"/>
+
+  <!-- Center 'C' Letter in Cammann Red -->
+  <text
+    x="32"
+    y="43"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="32"
+    font-weight="800"
+    fill="url(#favRed)"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >C</text>
+</svg>
