@@ -24,6 +24,11 @@ export const faqItems: FaqItem[] = [
   {
     category: "Kontaktlinsen",
     question: "Können Kontaktlinsen auch bei Hornhautverkrümmung oder Trockenheit angepasst werden?",
-    answer: "Ja, absolut. Mit moderner digitaler Topographie kartieren wir die Hornhautoberfläche exakt. Selbst bei ausgeprägtem Astigmatismus, Keratokonus oder sensiblen, trockenen Augen finden wir maßgefertigte Spezial- oder Ortho-K-Linsen für optimalen Tragekomfort."
+    answer: "Ja, absolut. Mit moderner digitaler Topographie analysieren wir die Hornhautoberfläche exakt. Selbst bei ausgeprägtem Astigmatismus, sensiblen oder trockenen Augen finden wir maßgefertigte Spezial-, Multifokal- oder Ortho-K-Linsen für optimalen Tragekomfort."
+  },
+  {
+    category: "Service",
+    question: "Bieten Sie Führerschein-Sehtests und Brillenreparaturen in der eigenen Werkstatt an?",
+    answer: "Ja. Wir sind anerkannte Sehteststelle für den amtlichen Führerschein-Sehtest (Klassen A, B, etc.). Zudem fertigen, schleifen und reparieren wir Brillengläser und Fassungen direkt in unserer hauseigenen Meisterwerkstatt in Hannover – inklusive Ultraschallreinigung, Richten und Ersatzteilservice."
   }
 ];

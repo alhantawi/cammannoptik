@@ -2,18 +2,27 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useAppointment } from "@/context/AppointmentContext";
-import { Clock, Activity, Sparkles, CheckCircle2, Award } from "lucide-react";
+import { Clock, Activity, CheckCircle2, Award } from "lucide-react";
 import gsap from "gsap";
+
+const BIOMETRIC_PHRASES = [
+  "DNEye® Scanner erfasst die individuelle Anatomie Ihrer Augen...",
+  "Berechne individuelles Rodenstock B.I.G. EXACT™ Glasprofil...",
+  "Optimiere Freiform-Gleitsichtkanal für entspanntes Sehen...",
+  "Sehanalyse abgeschlossen: Höchster Kontrast bei Tag und Nacht."
+];
+
+const BAR_HEIGHTS = [45, 85, 38, 92, 65, 42, 78, 88, 55, 75, 95, 68];
 
 export const FeaturesMicroUI: React.FC = () => {
   const { openBooking } = useAppointment();
 
-  // Card 1: Real Biometric Diagnostic Shuffler
+  // Card 1: Real Biometric Parameter Shuffler
   const [shufflerData, setShufflerData] = useState([
-    { label: "Biometrische Brechkraft", value: "0.01 dpt", status: "DNEye® Exakt", score: 99 },
-    { label: "Tag- & Nachtsehen (Pupille)", value: "5.8 mm", status: "Kompensiert", score: 98 },
-    { label: "Binokulare Fusion (MKH)", value: "Stereo 100%", status: "Harmonisch", score: 97 },
-    { label: "Hornhaut-Topographie", value: "Symm. 43.2D", status: "Kartiert", score: 99 }
+    { label: "Messgenauigkeit", value: "0,01 dpt", status: "DNEye® Exakt", score: 99 },
+    { label: "Tag- & Nachtsehen", value: "Pupillen-Profil", status: "Optimiert", score: 98 },
+    { label: "Beidäugiges Sehen (MKH)", value: "Binokular", status: "Harmonisch", score: 97 },
+    { label: "Hornhaut-Geometrie", value: "3D-Erfasst", status: "Maßgefertigt", score: 99 }
   ]);
 
   useEffect(() => {
@@ -30,12 +39,6 @@ export const FeaturesMicroUI: React.FC = () => {
 
   // Card 2: Biometric Telemetry Typewriter
   const [typewriterText, setTypewriterText] = useState("");
-  const biometricPhrases = [
-    "DNEye® Scanner erfasst 7.000 biometrische Messpunkte...",
-    "Berechne individuelles Rodenstock B.I.G. EXACT™ Glasprofil...",
-    "Optimiere Freiform-Gleitsichtkanal auf Zehntelmillimeter...",
-    "Stereo-Sehtest abgeschlossen: Maximale Sehschärfe erreicht."
-  ];
 
   useEffect(() => {
     let currentPhraseIndex = 0;
@@ -44,7 +47,7 @@ export const FeaturesMicroUI: React.FC = () => {
     let timeout: NodeJS.Timeout;
 
     const type = () => {
-      const currentPhrase = biometricPhrases[currentPhraseIndex];
+      const currentPhrase = BIOMETRIC_PHRASES[currentPhraseIndex];
 
       if (!isDeleting && currentCharIndex <= currentPhrase.length) {
         setTypewriterText(currentPhrase.substring(0, currentCharIndex));
@@ -59,7 +62,7 @@ export const FeaturesMicroUI: React.FC = () => {
         timeout = setTimeout(type, 2200);
       } else if (currentCharIndex < 0) {
         isDeleting = false;
-        currentPhraseIndex = (currentPhraseIndex + 1) % biometricPhrases.length;
+        currentPhraseIndex = (currentPhraseIndex + 1) % BIOMETRIC_PHRASES.length;
         timeout = setTimeout(type, 400);
       }
     };
@@ -67,8 +70,6 @@ export const FeaturesMicroUI: React.FC = () => {
     timeout = setTimeout(type, 800);
     return () => clearTimeout(timeout);
   }, []);
-
-  const barHeights = useRef([45, 85, 38, 92, 65, 42, 78, 88, 55, 75, 95, 68]);
 
   // Card 3: Simulated Cursor GSAP Animation
   const cursorRef = useRef<SVGSVGElement>(null);
@@ -104,13 +105,13 @@ export const FeaturesMicroUI: React.FC = () => {
             <span>Biometrische Augenoptik</span>
           </span>
           <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">
-            Präzise Diagnostik statt <br />
+            Präzise Sehanalyse statt <br />
             <span className="font-serif italic font-normal text-[#D13426]">
               pauschaler Standardwerte.
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#161719]/70 leading-relaxed font-light">
-            Weil jedes Auge so einzigartig ist wie ein Fingerabdruck, vermessen wir Ihre Augen mit dem Rodenstock DNEye® Scanner nicht nur statisch, sondern erfassen tausende biometrische Datenpunkte für maßgefertigten Sehkomfort.
+            Weil jedes Auge so einzigartig ist wie ein Fingerabdruck, vermessen wir Ihre Augen mit dem Rodenstock DNEye® Scanner nicht nur statisch, sondern erfassen relevante biometrische Parameter für maßgefertigten Sehkomfort.
           </p>
         </div>
 
@@ -128,7 +129,7 @@ export const FeaturesMicroUI: React.FC = () => {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#D13426] animate-pulse" />
               </div>
               <p className="text-xs text-[#161719]/60 mb-6">
-                Rodenstock DNEye® Scanner Parameter:
+                Rodenstock DNEye® Analyse-Parameter:
               </p>
             </div>
 
@@ -151,11 +152,11 @@ export const FeaturesMicroUI: React.FC = () => {
                     </span>
                   </div>
                   <div className="flex justify-between items-end">
-                    <span className="font-mono text-2xl font-bold text-[#161719]">
+                    <span className="font-mono text-xl font-bold text-[#161719]">
                       {data.value}
                     </span>
-                    <span className="text-[11px] font-mono text-[#161719]/50">
-                      Präzision 99.8%
+                    <span className="text-[11px] font-mono text-[#161719]/60">
+                      Biometrisch exakt
                     </span>
                   </div>
                 </div>
@@ -189,7 +190,7 @@ export const FeaturesMicroUI: React.FC = () => {
             </div>
 
             <div className="relative w-full h-20 bg-gradient-to-t from-white/5 to-transparent flex items-end gap-1.5 px-2 pb-2 rounded-xl">
-              {barHeights.current.map((height, i) => (
+              {BAR_HEIGHTS.map((height, i) => (
                 <div
                   key={i}
                   className="flex-1 bg-[#D13426] rounded-t-sm origin-bottom"

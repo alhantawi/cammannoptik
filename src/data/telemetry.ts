@@ -1,17 +1,17 @@
 import { DiagnosticItem } from "@/types";
 
 export const initialDiagnosticItems: DiagnosticItem[] = [
-  { label: "Binokulares Sehen", value: "99.2%", status: "Optimiert", score: 99 },
-  { label: "Wellenfront-Aberration", value: "0.04 µm", status: "Kompensiert", score: 96 },
-  { label: "Myopie-Progression", value: "Stabil", status: "Kontrolliert", score: 94 },
-  { label: "Hornhaut-Topographie", value: "Symm. 43.2D", status: "Erfasst", score: 98 },
-  { label: "Tränenfilm-Stabilität (NIBUT)", value: "14.8 s", status: "Ideal", score: 97 }
+  { label: "Messgenauigkeit", value: "0,01 dpt", status: "DNEye® Exakt", score: 99 },
+  { label: "Tag- & Nachtsehen", value: "Pupillengröße", status: "Optimiert", score: 98 },
+  { label: "Beidäugiges Sehen (MKH)", value: "Binokular", status: "Harmonisch", score: 97 },
+  { label: "Hornhaut-Geometrie", value: "3D-Erfasst", status: "Maßgefertigt", score: 98 },
+  { label: "Tränenfilm- & Kontaktlinsenprofil", value: "Individuell", status: "Abgestimmt", score: 96 }
 ];
 
 export const telemetryPhrases: string[] = [
-  "Analysiere individuelle Sehgewohnheiten & Kopfhaltung...",
-  "Optimiere Freiform-Gleitsicht Parameter auf 0.01 dpt...",
-  "Kalibriere binokulares Fusions- und Stereoprofil...",
-  "Erfasse Nachtmyopie & Kontrastempfindlichkeit...",
-  "System bereit für optometrische Meisterprüfung."
+  "Erfasse individuelle Augenparameter & Hornhautgeometrie...",
+  "Berechne Rodenstock B.I.G. EXACT™ Freiform-Gleitsichtprofil...",
+  "Optimiere Kontrast- und Nachtsehen für blendfreie Fahrten...",
+  "Passe torische & multifokale Kontaktlinsen exakt an...",
+  "Meisterlabor bereit für handwerkliche Präzisionsfertigung."
 ];

@@ -34,31 +34,136 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cammann Optik Hannover | Meisterbetrieb für biometrische Augenoptik",
+  metadataBase: new URL("https://www.cammannoptik.de"),
+  title: "Cammann Optik Hannover | Ihr Augenoptikermeister für biometrisches Sehen",
   description:
-    "Inhabergeführter Meisterbetrieb für biometrische 3D-Augenglasbestimmung (Rodenstock DNEye®), handgefertigte Designerfassungen (Lunor, Maui Jim, Escada, Morel) und persönliche Sehanalysen in Hannover.",
+    "Ihr inhabergeführter Augenoptikermeister in Hannover. Persönliche Sehberatung, biometrische DNEye® Augenvermessung, maßgefertigte Gleitsichtbrillen, Kontaktlinsen und handverlesene Manufakturfassungen von Lunor, Morel & Maui Jim.",
   keywords: [
     "Optiker Hannover",
-    "Augenoptikermeister Shaikh Ali",
+    "Augenoptikermeister Ismaeel Sheikh Ali",
     "Cammann Optik Hannover",
     "Rodenstock DNEye Scanner",
     "Lunor Brillen Hannover",
     "Biometrische Brillengläser",
-    "Gleitsichtbrille Meister"
+    "Gleitsichtbrille Meister",
+    "Kontaktlinsen Anpassung Hannover",
+    "Führerschein Sehtest Hannover",
+    "Königstraße Hannover Optiker"
   ],
-  authors: [{ name: "Cammann Optik" }],
+  authors: [{ name: "Ismaeel Sheikh Ali - Cammann Optik" }],
+  alternates: {
+    canonical: "https://www.cammannoptik.de/"
+  },
   openGraph: {
-    title: "Cammann Optik Hannover | Meisterbetrieb für biometrische Augenoptik",
+    title: "Cammann Optik Hannover | Ihr Augenoptikermeister",
     description:
-      "Wir verbinden modernste 3D-Messtechnik mit handwerklicher Meisterqualität für Ihr perfektes Seherlebnis.",
-    url: "https://cammann-optik.de",
-    siteName: "Cammann Optik",
+      "Persönliche Sehberatung, biometrische 3D-Augenvermessung und hochwertige Brillen – individuell für Sie gefertigt in Hannover.",
+    url: "https://www.cammannoptik.de",
+    siteName: "Cammann Optik Hannover",
     locale: "de_DE",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/2.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Cammann Optik Hannover – Meisterstudio für biometrische Augenoptik"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cammann Optik Hannover | Ihr Augenoptikermeister",
+    description: "Persönliche Sehberatung, biometrische Augenvermessung & handwerkliche Präzision in Hannover.",
+    images: ["/2.jpeg"]
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg"
+  }
+};
+
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Optician", "LocalBusiness"],
+  "@id": "https://www.cammannoptik.de/#optician",
+  name: "Cammann Optik",
+  image: "https://www.cammannoptik.de/2.jpeg",
+  url: "https://www.cammannoptik.de",
+  telephone: "+49511343628",
+  email: "kundenservice@cammannoptik.de",
+  priceRange: "€€",
+  founder: {
+    "@type": "Person",
+    name: "Ismaeel Sheikh Ali",
+    jobTitle: "Augenoptikermeister"
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Königstraße 44",
+    addressLocality: "Hannover",
+    postalCode: "30175",
+    addressRegion: "Niedersachsen",
+    addressCountry: "DE"
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.3759,
+    longitude: 9.7490
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      description: "Termine ausschließlich nach vorheriger Vereinbarung"
+    }
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Leistungen & Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Biometrische Sehanalyse (Rodenstock DNEye®)"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Freiform-Gleitsichtgläser & Bildschirmarbeitsplatzbrillen"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Individuelle Kontaktlinsenanpassung & Nachkontrollen"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Führerschein-Sehtest (amtlich anerkannt)"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Hauseigene Meisterwerkstatt & Brillenreparaturen"
+        }
+      }
+    ]
   }
 };
 
@@ -72,6 +177,12 @@ export default function RootLayout({
       lang="de"
       className={`${outfit.variable} ${cormorant.variable} ${plusJakarta.variable} ${spaceMono.variable} scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+      </head>
       <body className="bg-[#FAF8F5] text-[#161719] font-jakarta selection:bg-[#D13426] selection:text-white min-h-screen relative">
         <AppointmentProvider>
           <NoiseOverlay />

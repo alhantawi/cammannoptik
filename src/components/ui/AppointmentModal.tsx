@@ -13,8 +13,13 @@ export const AppointmentModal: React.FC = () => {
   const { isOpen, closeBooking, selectedServiceId } = useAppointment();
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [service, setService] = useState<string>("meister");
-  const [selectedDate, setSelectedDate] = useState<string>("");
+  const [customService, setCustomService] = useState<string>("");
+  const service = customService || selectedServiceId || "meister";
+  const [selectedDate, setSelectedDate] = useState<string>(() => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().split("T")[0];
+  });
   const [selectedTime, setSelectedTime] = useState<string>("11:00");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -22,19 +27,8 @@ export const AppointmentModal: React.FC = () => {
     phone: "",
     notes: ""
   });
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  useEffect(() => {
-    if (selectedServiceId) {
-      setService(selectedServiceId);
-    }
-  }, [selectedServiceId]);
-
-  useEffect(() => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    setSelectedDate(tomorrow.toISOString().split("T")[0]);
-  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -50,13 +44,17 @@ export const AppointmentModal: React.FC = () => {
 
   const currentServiceObj = serviceTiers.find((s) => s.id === service) || serviceTiers[1];
 
+  const isSaturday = selectedDate ? new Date(selectedDate).getDay() === 6 : false;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!privacyConsent) return;
     setIsSubmitted(true);
   };
 
   const handleResetAndClose = () => {
     setIsSubmitted(false);
+    setPrivacyConsent(false);
     setStep(1);
     closeBooking();
   };
@@ -174,7 +172,7 @@ export const AppointmentModal: React.FC = () => {
                     {serviceTiers.map((s) => (
                       <div
                         key={s.id}
-                        onClick={() => setService(s.id)}
+                        onClick={() => setCustomService(s.id)}
                         className={`p-4 rounded-2xl border cursor-pointer transition-all flex flex-col justify-between ${
                           service === s.id
                             ? "bg-[#161719] text-white border-[#161719] shadow-md ring-2 ring-[#D13426]"
@@ -230,6 +228,12 @@ export const AppointmentModal: React.FC = () => {
                       className="w-full bg-[#FAF8F5] border border-[#161719]/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426]"
                       required
                     />
+                    {isSaturday && (
+                      <div className="mt-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-amber-900 flex items-center gap-2">
+                        <Clock size={13} className="text-amber-600 shrink-0" />
+                        <span>Hinweis: Samstags Termine ausschließlich nach vorheriger Vereinbarung.</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="bg-white p-6 rounded-2xl border border-[#161719]/10">
@@ -327,15 +331,40 @@ export const AppointmentModal: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-mono uppercase text-[#161719] mb-1.5 font-bold">
-                      Besondere Wünsche (z.B. Gleitsichtglas, Lunor-Fassung, Sonnenbrille)
+                      Besondere Wünsche (z.B. Gleitsichtglas, Kontaktlinsen, Lunor-Fassung)
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Optional: Haben Sie bereits Brillenwerte oder konkrete Fassungswünsche?"
+                      placeholder="Optional: Haben Sie bereits Brillenwerte oder konkrete Fassungs- oder Linsenwünsche?"
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       className="w-full bg-white border border-[#161719]/15 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] resize-none"
                     />
+                  </div>
+
+                  {/* Datenschutz-Einwilligung */}
+                  <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#161719]/10">
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={privacyConsent}
+                        onChange={(e) => setPrivacyConsent(e.target.checked)}
+                        required
+                        className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#D13426] focus:ring-[#D13426] shrink-0"
+                      />
+                      <span className="text-xs text-[#161719]/80 leading-relaxed font-light">
+                        Ich habe die{" "}
+                        <a
+                          href="/datenschutz"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#D13426] font-semibold underline hover:text-[#B5281B]"
+                        >
+                          Datenschutzerklärung
+                        </a>{" "}
+                        zur Kenntnis genommen und willige ein, dass meine Daten zur Bearbeitung meiner Terminanfrage verarbeitet werden. *
+                      </span>
+                    </label>
                   </div>
 
                   <div className="flex justify-between items-center pt-3 border-t border-[#161719]/10">
@@ -348,9 +377,14 @@ export const AppointmentModal: React.FC = () => {
                     </button>
                     <button
                       type="submit"
-                      className="luxury-btn bg-[#D13426] hover:bg-[#B5281B] text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-lg cursor-pointer"
+                      disabled={!privacyConsent}
+                      className={`luxury-btn text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-lg transition-all ${
+                        privacyConsent
+                          ? "bg-[#D13426] hover:bg-[#B5281B] cursor-pointer"
+                          : "bg-gray-400 opacity-60 cursor-not-allowed"
+                      }`}
                     >
-                      <span>Termin verbindlich anfragen</span>
+                      <span>Terminanfrage absenden</span>
                       <CheckCircle size={16} />
                     </button>
                   </div>

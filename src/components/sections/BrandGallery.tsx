@@ -2,7 +2,7 @@
 
 import React from "react";
 import { eyewearBrands } from "@/data/brands";
-import { Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { useAppointment } from "@/context/AppointmentContext";
 
 export const BrandGallery: React.FC = () => {

@@ -13,7 +13,7 @@ export interface GoogleReview {
 export const googleReviewsData = {
   averageRating: 5.0,
   totalReviews: 26,
-  recommendationRate: "100%",
+  recommendationRate: "Ausgezeichnet",
   badgeText: "Ausgezeichnet auf Google",
   reviews: [
     {
@@ -23,7 +23,7 @@ export const googleReviewsData = {
       rating: 5,
       date: "vor 2 Wochen",
       highlight: "Perfekte Gleitsichtbrille ohne jegliche Eingewöhnungszeit!",
-      text: "Ich trage seit 15 Jahren Gleitsichtbrillen und hatte bisher immer Probleme mit Schwindel in den ersten Tagen. Durch die biometrische DNEye-Vermessung bei Cammann Optik passte die neue Brille ab der ersten Sekunde perfekt. Die Beratung durch den Meister war überragend ruhig, kompetent und ehrlich. Absolute Empfehlung!",
+      text: "Ich trage seit vielen Jahren Gleitsichtbrillen und hatte bisher immer Probleme mit Schwindel in den ersten Tagen. Durch die biometrische DNEye-Vermessung bei Cammann Optik passte die neue Brille ab der ersten Sekunde perfekt. Die Beratung durch den Meister war überragend ruhig, kompetent und ehrlich. Absolute Empfehlung!",
       serviceUsed: "Meister-Profil & Rodenstock B.I.G.",
       verified: true
     },
@@ -56,7 +56,7 @@ export const googleReviewsData = {
       rating: 5,
       date: "vor 3 Monaten",
       highlight: "Herausragender Service und transparente Beratung.",
-      text: "Kein Verkaufsdruck, keine Hektik wie bei den großen Ketten. Hier steht wirklich das Wohl des Kunden im Mittelpunkt. Auch das Nachjustieren und der lebenslange Service sind erstklassig. Vielen Dank!",
+      text: "Kein Verkaufsdruck, keine Hektik. Hier steht wirklich das Wohl des Kunden im Mittelpunkt. Auch das Nachjustieren und der persönliche Service sind erstklassig. Vielen Dank!",
       serviceUsed: "Augenglasbestimmung & Fassung",
       verified: true
     }

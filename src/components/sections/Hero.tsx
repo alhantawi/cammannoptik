@@ -48,25 +48,27 @@ export const Hero: React.FC = () => {
         <div className="hero-anim flex flex-wrap items-center gap-3 mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 font-mono text-xs uppercase tracking-widest text-[#FAF8F5]">
             <span className="w-2 h-2 rounded-full bg-[#D13426] animate-pulse" />
-            <span>Inhabergeführtes Fachgeschäft</span>
+            <span>Ihr Augenoptikermeister in Hannover</span>
           </div>
 
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D13426]/20 border border-[#D13426]/40 font-mono text-xs text-white">
             <Sparkles size={13} className="text-[#D13426]" />
-            <span>Rodenstock Biometrie-Zentrum</span>
+            <span>Rodenstock DNEye® Biometrie-Zentrum</span>
           </div>
         </div>
 
         {/* Headlines */}
-        <h1 className="hero-anim font-outfit text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight mb-4 text-white">
-          Sehen auf <br className="hidden sm:inline" />
-          <span className="font-serif italic font-normal text-[#FAF8F5] text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
-            höchstem Niveau.
-          </span>
+        <h1 className="hero-anim font-outfit text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight mb-5 text-white">
+          Persönliche Sehberatung, <br className="hidden sm:inline" />
+          <span className="font-serif italic font-normal text-[#FAF8F5]">
+            biometrische Augenvermessung
+          </span>{" "}
+          <br className="hidden sm:inline" />
+          & maßgefertigte Brillen.
         </h1>
 
-        <p className="hero-anim text-lg sm:text-xl md:text-2xl font-light text-white/85 max-w-2xl leading-relaxed mb-10">
-          Wir verbinden individuelle handwerkliche Meisterberatung mit biometrischer 3D-Vermessung und handverlesenen Designer-Brillenfassungen.
+        <p className="hero-anim text-base sm:text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed mb-10">
+          Bei Cammann Optik werden Sie persönlich vom Augenoptikermeister betreut – von der ausführlichen Sehanalyse bis zur fertigen Brille. Individuell für Sie gefertigt in unserer hauseigenen Meisterwerkstatt.
         </p>
 
         {/* CTA Actions and Studio Pill */}

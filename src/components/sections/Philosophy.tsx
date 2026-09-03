@@ -87,17 +87,17 @@ export const Philosophy: React.FC = () => {
             <span>Unsere Handwerks-Philosophie</span>
           </div>
 
-          <h2 className="phil-text font-outfit text-3xl sm:text-4xl md:text-5xl font-light leading-tight mb-4 text-white/50">
-            Große Ketten verkaufen Brillen. <br />
-            <span className="font-bold text-white">Wir schaffen Lebensqualität.</span>
+          <h2 className="phil-text font-outfit text-3xl sm:text-4xl md:text-5xl font-light leading-tight mb-4 text-white">
+            Bei uns stehen Zeit, persönliche Betreuung <br />
+            <span className="font-bold text-white">und eine individuelle Sehlösung im Mittelpunkt.</span>
           </h2>
 
-          <h2 className="phil-text font-serif text-3xl sm:text-4xl md:text-5xl italic leading-tight text-[#D13426] mb-8">
+          <h3 className="phil-text font-serif text-3xl sm:text-4xl md:text-5xl italic leading-tight text-[#D13426] mb-8">
             „Sehen ist Vertrauenssache.“
-          </h2>
+          </h3>
 
           <p className="phil-text text-white/75 text-base md:text-lg leading-relaxed font-light mb-8 max-w-lg">
-            In Zeiten schneller Online-Shops und unpersönlicher Filialisten setzen wir bei Cammann Optik auf das, was wirklich zählt: Zeit, fundiertes Fachwissen, modernste DNEye® Messtechnik und Brillenunikate mit Seele.
+            Die biometrische Vermessung berücksichtigt Ihre individuellen Augenparameter. Dadurch können Brillengläser genauer auf Ihr Sehen abgestimmt werden – für entspanntes Sehen bei Tag und Nacht.
           </p>
         </div>
 

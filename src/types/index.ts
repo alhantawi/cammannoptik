@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface ProtocolCard {
   id: string;
   title: string;
@@ -35,7 +33,7 @@ export interface DiagnosticItem {
 export interface FaqItem {
   question: string;
   answer: string;
-  category: "Optometrie" | "Brillen" | "Kontaktlinsen" | "Termin";
+  category: "Optometrie" | "Brillen" | "Kontaktlinsen" | "Termin" | "Service";
 }
 
 export interface AppointmentFormData {

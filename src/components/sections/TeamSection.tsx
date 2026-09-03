@@ -2,7 +2,7 @@
 
 import React from "react";
 import { teamMembers, trustBadges } from "@/data/team";
-import { Award, ShieldCheck, CheckCircle2, UserCheck, Sparkles, HeartHandshake } from "lucide-react";
+import { Award, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { useAppointment } from "@/context/AppointmentContext";
 
 export const TeamSection: React.FC = () => {

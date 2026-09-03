@@ -11,9 +11,9 @@ export const navigationLinks = [
 export const contactInfo = {
   brandName: "Cammann",
   brandSuffix: "Optik",
-  inhaber: "Shaikh Ali (Augenoptikermeister)",
+  inhaber: "Ismaeel Sheikh Ali (Augenoptikermeister)",
   tagline: "Meisterbetrieb für ganzheitliche Augenoptik & biometrische 3D-Refraktion",
-  phone: "+49 (0) 511 34 36 28",
+  phone: "+49511343628",
   phoneDisplay: "0511 343628",
   whatsapp: "491727442964",
   whatsappDisplay: "+49 172 7442964",
@@ -25,13 +25,13 @@ export const contactInfo = {
   },
   openingHours: [
     { days: "Montag – Freitag", hours: "10:00 – 18:00 Uhr" },
-    { days: "Samstag", hours: "10:00 – 14:00 Uhr (mit Termin)" },
+    { days: "Samstag", hours: "Termine ausschließlich nach vorheriger Vereinbarung" },
     { days: "Sonntag", hours: "Geschlossen" }
   ],
   googleScore: {
-    stars: 4.5,
+    stars: 5.0,
     count: 26,
-    recommendation: "96%"
+    recommendation: "100%"
   },
   status: "Meisterlabor / Rodenstock DNEye® Mess-Systeme Online"
 };

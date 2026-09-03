@@ -4,6 +4,14 @@ import { googleReviewsData } from "@/data/reviews";
 export const dynamic = "force-dynamic";
 export const revalidate = 3600; // Cache for 1 hour
 
+interface GooglePlaceRawReview {
+  author_name: string;
+  rating: number;
+  relative_time_description: string;
+  text: string;
+  profile_photo_url?: string;
+}
+
 export async function GET() {
   try {
     const apiKey = process.env.GOOGLE_PLACES_API_KEY;
@@ -17,7 +25,7 @@ export async function GET() {
       if (res.ok) {
         const data = await res.json();
         if (data.result) {
-          const liveReviews = (data.result.reviews || []).map((rev: any, index: number) => ({
+          const liveReviews = (data.result.reviews || []).map((rev: GooglePlaceRawReview, index: number) => ({
             id: `google-live-${index}`,
             author: rev.author_name,
             role: "Verifizierter Google-Kunde",

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, MapPin, Eye, Award, CheckCircle, ArrowRight } from "lucide-react";
+import { Sparkles, CheckCircle, ArrowRight } from "lucide-react";
 import { useAppointment } from "@/context/AppointmentContext";
 
 export const StudioTour: React.FC = () => {

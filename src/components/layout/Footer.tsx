@@ -2,7 +2,7 @@
 
 import React from "react";
 import { contactInfo } from "@/data/navigation";
-import { Phone, Mail, MapPin, Clock, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { useAppointment } from "@/context/AppointmentContext";
 import { CammannLogo } from "@/components/ui/CammannLogo";
 
@@ -64,13 +64,13 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4 text-white/75 text-sm">
               <li>
                 <a
-                  href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+                  href={`tel:${contactInfo.phone}`}
                   className="flex items-center gap-3 hover:text-white transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
                     <Phone size={14} />
                   </div>
-                  <span className="font-mono text-xs">{contactInfo.phone}</span>
+                  <span className="font-mono text-xs">{contactInfo.phoneDisplay}</span>
                 </a>
               </li>
               <li>
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
                   }`}
                 >
                   <span>{item.days}</span>
-                  <span className="font-mono">{item.hours}</span>
+                  <span className="font-mono text-right pl-2">{item.hours}</span>
                 </li>
               ))}
             </ul>
@@ -140,15 +140,15 @@ export const Footer: React.FC = () => {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white/40 border-t border-white/10 pt-8 gap-4">
-          <p>© {new Date().getFullYear()} Cammann Optik Hannover. Alle Rechte vorbehalten.</p>
+          <p>© {new Date().getFullYear()} Cammann Optik Hannover. Inhaber Ismaeel Sheikh Ali.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/impressum" className="hover:text-white transition-colors">
               Impressum
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/datenschutz" className="hover:text-white transition-colors">
               Datenschutz
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/barrierefreiheit" className="hover:text-white transition-colors">
               Barrierefreiheit
             </a>
           </div>

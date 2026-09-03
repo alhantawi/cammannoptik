@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { navigationLinks, contactInfo } from "@/data/navigation";
 import { useAppointment } from "@/context/AppointmentContext";
 import { Menu, X, Calendar, Phone } from "lucide-react";
@@ -31,13 +32,13 @@ export const Navbar: React.FC = () => {
         >
           {/* Logo Section */}
           <div className="flex items-center gap-4 shrink-0">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex items-center focus:outline-none group py-0.5"
               aria-label="Cammann Optik Startseite"
             >
               <CammannLogo className="h-6 sm:h-7.5 md:h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -58,7 +59,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Phone Link - Full on XL screens, Icon on sm/md */}
             <a
-              href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+              href={`tel:${contactInfo.phone}`}
               className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono text-white/75 hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
               title="Jetzt anrufen"
             >
@@ -67,9 +68,9 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+              href={`tel:${contactInfo.phone}`}
               className="hidden sm:inline-flex xl:hidden w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 text-white items-center justify-center border border-white/10 transition-colors shrink-0"
-              title={`Anrufen: ${contactInfo.phone}`}
+              title={`Anrufen: ${contactInfo.phoneDisplay}`}
             >
               <Phone size={14} className="text-[#D13426]" />
             </a>
@@ -137,11 +138,11 @@ export const Navbar: React.FC = () => {
               Meister-Termin anfragen
             </button>
             <a
-              href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+              href={`tel:${contactInfo.phone}`}
               className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-white/10 text-white text-center text-xs font-mono"
             >
               <Phone size={13} className="text-[#D13426]" />
-              <span>{contactInfo.phone}</span>
+              <span>{contactInfo.phoneDisplay}</span>
             </a>
           </div>
         </div>
