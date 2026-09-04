@@ -139,25 +139,28 @@ export const FeaturesMicroUI: React.FC = () => {
                   key={data.label}
                   className="absolute w-full bg-[#FAF8F5] rounded-2xl p-4 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#161719]/10 shadow-sm"
                   style={{
-                    top: `${i * 1.35}rem`,
-                    transform: `scale(${1 - i * 0.05})`,
-                    opacity: 1 - i * 0.18,
-                    zIndex: 4 - i
+                    top: `${i * 0.9}rem`,
+                    transform: `scale(${1 - i * 0.04})`,
+                    opacity: 1 - i * 0.16,
+                    zIndex: 4 - i,
+                    pointerEvents: i === 0 ? "auto" : "none"
                   }}
                 >
-                  <div className="flex justify-between items-center mb-1.5">
-                    <p className="text-xs font-semibold text-[#161719]">{data.label}</p>
-                    <span className="font-mono text-[10px] uppercase font-bold text-[#D13426] bg-[#D13426]/10 px-2 py-0.5 rounded-full">
-                      {data.status}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-end">
-                    <span className="font-mono text-xl font-bold text-[#161719]">
-                      {data.value}
-                    </span>
-                    <span className="text-[11px] font-mono text-[#161719]/60">
-                      Biometrisch exakt
-                    </span>
+                  <div className={`transition-opacity duration-300 ${i === 0 ? "opacity-100" : "opacity-0"}`}>
+                    <div className="flex justify-between items-center mb-1.5">
+                      <p className="text-xs font-semibold text-[#161719]">{data.label}</p>
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#D13426] bg-[#D13426]/10 px-2 py-0.5 rounded-full">
+                        {data.status}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-end">
+                      <span className="font-mono text-xl font-bold text-[#161719]">
+                        {data.value}
+                      </span>
+                      <span className="text-[11px] font-mono text-[#161719]/60">
+                        Biometrisch exakt
+                      </span>
+                    </div>
                   </div>
                 </div>
               ))}
