@@ -68,30 +68,30 @@ export const ReviewsSection: React.FC = () => {
   });
 
   return (
-    <section id="bewertungen" className="py-28 px-6 md:px-16 bg-[#FAF8F5] text-[#161719] relative">
+    <section id="bewertungen" className="py-28 px-6 md:px-16 bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-[#FAF8F5] transition-colors duration-500 relative">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#161719]/10 shadow-sm text-xs font-mono mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#202226] border border-[#161719]/10 dark:border-white/10 shadow-sm text-xs font-mono mb-3">
               <GoogleLogoSvg />
-              <span className="font-bold text-[#161719]"> Google Feed</span>
+              <span className="font-bold text-[#161719] dark:text-white"> Google Feed</span>
               <span className="text-[#D13426] font-bold">• 4.6 Sterne</span>
             </div>
 
-            <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black text-[#161719] leading-tight">
+            <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black text-[#161719] dark:text-white leading-tight">
               Was unsere Kunden auf Google sagen
             </h2>
-            <p className="text-[#161719]/70 max-w-xl text-base font-light mt-2">
+            <p className="text-[#161719]/70 dark:text-white/70 max-w-xl text-base font-light mt-2">
               Echte, verifizierte Rezensionen unserer Gäste im Cammann Optik Meisterstudio Hannover.
             </p>
           </div>
 
           {/* Google Summary Badge */}
-          <div className="bg-white p-6 sm:p-7 rounded-3xl border border-[#161719]/10 shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-6 shrink-0">
-            <div className="flex flex-col items-center justify-center sm:pr-6 sm:border-r border-[#161719]/10">
-              <span className="font-outfit font-black text-4xl sm:text-5xl text-[#161719] leading-none">
+          <div className="bg-white dark:bg-[#202226] p-6 sm:p-7 rounded-3xl border border-[#161719]/10 dark:border-white/10 shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-6 shrink-0 transition-colors duration-500">
+            <div className="flex flex-col items-center justify-center sm:pr-6 sm:border-r border-[#161719]/10 dark:border-white/10">
+              <span className="font-outfit font-black text-4xl sm:text-5xl text-[#161719] dark:text-white leading-none">
                 {rating.toFixed(1)}
               </span>
               <div className="flex gap-1 text-amber-400 mt-2">
@@ -104,7 +104,7 @@ export const ReviewsSection: React.FC = () => {
             <div className="flex flex-col justify-center space-y-1">
               <div className="flex items-center gap-2">
                 <GoogleLogoSvg />
-                <span className="font-outfit font-bold text-base text-[#161719]">
+                <span className="font-outfit font-bold text-base text-[#161719] dark:text-white">
                   {totalCount} Google Bewertungen
                 </span>
               </div>
@@ -128,7 +128,7 @@ export const ReviewsSection: React.FC = () => {
                 <button
                   onClick={fetchReviews}
                   disabled={loading}
-                  className="text-[11px] font-mono text-[#161719]/60 hover:text-[#161719] flex items-center gap-1 cursor-pointer"
+                  className="text-[11px] font-mono text-[#161719]/60 dark:text-white/60 hover:text-[#161719] dark:hover:text-white flex items-center gap-1 cursor-pointer"
                   title="Rezensionen neu laden"
                 >
                   <RefreshCw size={11} className={loading ? "animate-spin" : ""} />
@@ -141,7 +141,7 @@ export const ReviewsSection: React.FC = () => {
 
         {/* Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 mb-10">
-          <span className="text-xs font-mono uppercase text-[#161719]/60 mr-2">Filtern nach:</span>
+          <span className="text-xs font-mono uppercase text-[#161719]/60 dark:text-white/60 mr-2">Filtern nach:</span>
           {[
             { id: "all", label: "Alle Bewertungen" },
             { id: "gleitsicht", label: "Gleitsicht & DNEye®" },
@@ -152,8 +152,8 @@ export const ReviewsSection: React.FC = () => {
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${activeFilter === f.id
-                ? "bg-[#161719] text-white shadow-sm"
-                : "bg-white text-[#161719]/70 hover:text-[#161719] border border-[#161719]/10"
+                ? "bg-[#161719] dark:bg-white text-white dark:text-[#161719] shadow-sm"
+                : "bg-white dark:bg-white/5 text-[#161719]/70 dark:text-white/70 hover:text-[#161719] dark:hover:text-white border border-[#161719]/10 dark:border-white/10"
                 }`}
             >
               {f.label}
@@ -165,11 +165,11 @@ export const ReviewsSection: React.FC = () => {
         {loading && reviews.length === 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white rounded-3xl p-8 border border-[#161719]/10 shadow-sm animate-pulse space-y-4">
-                <div className="h-4 bg-gray-200 rounded w-1/4" />
-                <div className="h-6 bg-gray-200 rounded w-3/4" />
-                <div className="h-16 bg-gray-100 rounded w-full" />
-                <div className="h-8 bg-gray-200 rounded w-1/3 pt-4" />
+              <div key={i} className="bg-white dark:bg-[#202226] rounded-3xl p-8 border border-[#161719]/10 dark:border-white/10 shadow-sm animate-pulse space-y-4">
+                <div className="h-4 bg-gray-200 dark:bg-white/10 rounded w-1/4" />
+                <div className="h-6 bg-gray-200 dark:bg-white/10 rounded w-3/4" />
+                <div className="h-16 bg-gray-100 dark:bg-white/5 rounded w-full" />
+                <div className="h-8 bg-gray-200 dark:bg-white/10 rounded w-1/3 pt-4" />
               </div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export const ReviewsSection: React.FC = () => {
             {filteredReviews.map((rev) => (
               <div
                 key={rev.id}
-                className="bg-white rounded-3xl p-8 border border-[#161719]/10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative group"
+                className="bg-white dark:bg-[#202226] rounded-3xl p-8 border border-[#161719]/10 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative group"
               >
                 <div>
                   {/* Top Row */}
@@ -188,36 +188,36 @@ export const ReviewsSection: React.FC = () => {
                         <Star key={i} size={16} fill="currentColor" />
                       ))}
                     </div>
-                    <span className="font-mono text-xs text-[#161719]/40">{rev.date}</span>
+                    <span className="font-mono text-xs text-[#161719]/40 dark:text-white/40">{rev.date}</span>
                   </div>
 
                   {/* Highlight */}
-                  <h3 className="font-outfit font-bold text-lg text-[#161719] mb-3 leading-snug">
+                  <h3 className="font-outfit font-bold text-lg text-[#161719] dark:text-white mb-3 leading-snug">
                     „{rev.highlight}“
                   </h3>
 
                   {/* Text */}
-                  <p className="text-sm text-[#161719]/75 font-light leading-relaxed mb-6">
+                  <p className="text-sm text-[#161719]/75 dark:text-white/75 font-light leading-relaxed mb-6">
                     {rev.text}
                   </p>
                 </div>
 
                 {/* Author Info */}
-                <div className="pt-4 border-t border-[#161719]/10 flex justify-between items-center">
+                <div className="pt-4 border-t border-[#161719]/10 dark:border-white/10 flex justify-between items-center">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-[#D13426]/10 text-[#D13426] font-bold text-xs flex items-center justify-center font-outfit">
                       {rev.author.charAt(0)}
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="font-outfit font-bold text-sm text-[#161719]">
+                        <span className="font-outfit font-bold text-sm text-[#161719] dark:text-white">
                           {rev.author}
                         </span>
                         {rev.verified && (
                           <CheckCircle size={13} className="text-[#D13426]" />
                         )}
                       </div>
-                      <span className="text-[11px] text-[#161719]/50 block">
+                      <span className="text-[11px] text-[#161719]/50 dark:text-white/50 block">
                         {rev.role}
                       </span>
                     </div>
@@ -233,16 +233,16 @@ export const ReviewsSection: React.FC = () => {
         )}
 
         {/* CTA Bar */}
-        <div className="mt-12 bg-white rounded-3xl p-8 border border-[#161719]/10 flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm">
+        <div className="mt-12 bg-white dark:bg-[#202226] rounded-3xl p-8 border border-[#161719]/10 dark:border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm transition-colors duration-500">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-[#D13426]/10 text-[#D13426] flex items-center justify-center shrink-0">
               <Quote size={22} />
             </div>
             <div>
-              <p className="font-outfit font-bold text-base text-[#161719]">
+              <p className="font-outfit font-bold text-base text-[#161719] dark:text-white">
                 Waren Sie bereits Gast in unserem Meisterstudio?
               </p>
-              <p className="text-xs text-[#161719]/60 font-light">
+              <p className="text-xs text-[#161719]/60 dark:text-white/60 font-light">
                 Wir freuen uns über Ihr ehrliches Feedback auf Google!
               </p>
             </div>
@@ -253,7 +253,7 @@ export const ReviewsSection: React.FC = () => {
               href={GOOGLE_SEARCH_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-full border border-[#161719]/20 hover:bg-[#161719]/5 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-colors"
+              className="px-6 py-3.5 rounded-full border border-[#161719]/20 dark:border-white/20 hover:bg-[#161719]/5 dark:hover:bg-white/10 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-colors text-[#161719] dark:text-white"
             >
               <span>Auf Google bewerten</span>
               <ExternalLink size={13} />

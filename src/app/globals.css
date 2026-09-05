@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-red: #D13426;
   --color-brand-red-hover: #B5281B;
@@ -20,10 +22,20 @@
 
 :root {
   --brand-red: #D13426;
+  --brand-red-hover: #B5281B;
   --charcoal: #161719;
   --cream: #FAF8F5;
   --cream-dark: #ECE7DF;
   --gold: #C5A880;
+  --bg-primary: #FAF8F5;
+  --bg-surface: #FFFFFF;
+  --text-primary: #161719;
+}
+
+.dark {
+  --bg-primary: #161719;
+  --bg-surface: #202226;
+  --text-primary: #FAF8F5;
 }
 
 html {
@@ -67,6 +79,16 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #D13426;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #161719;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2E3138;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #D13426;
 }
 

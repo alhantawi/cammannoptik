@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Cormorant_Garamond, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { AppointmentProvider } from "@/context/AppointmentContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { AppointmentModal } from "@/components/ui/AppointmentModal";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -175,21 +176,45 @@ export default function RootLayout({
   return (
     <html
       lang="de"
+      suppressHydrationWarning
       className={`${outfit.variable} ${cormorant.variable} ${plusJakarta.variable} ${spaceMono.variable} scroll-smooth antialiased`}
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('cammann_theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.documentElement.style.colorScheme = 'dark';
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.documentElement.style.colorScheme = 'light';
+                  }
+                } catch (e) {}
+              })();
+            `
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
       </head>
-      <body className="bg-[#FAF8F5] text-[#161719] font-jakarta selection:bg-[#D13426] selection:text-white min-h-screen relative">
-        <AppointmentProvider>
-          <NoiseOverlay />
-          {children}
-          <AppointmentModal />
-          <WhatsAppButton />
-        </AppointmentProvider>
+      <body className="bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-[#FAF8F5] font-jakarta selection:bg-[#D13426] selection:text-white min-h-screen relative transition-colors duration-300">
+        <ThemeProvider>
+          <AppointmentProvider>
+            <NoiseOverlay />
+            {children}
+            <AppointmentModal />
+            <WhatsAppButton />
+          </AppointmentProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

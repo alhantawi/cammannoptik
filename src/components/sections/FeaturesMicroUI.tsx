@@ -95,23 +95,23 @@ export const FeaturesMicroUI: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-16 bg-[#FAF8F5] text-[#161719] relative">
+    <section id="augenvermessung" className="py-24 px-6 md:px-16 bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-[#FAF8F5] transition-colors duration-500 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="mb-16 max-w-3xl">
           <span className="font-mono text-xs uppercase tracking-widest text-[#D13426] bg-[#D13426]/10 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 mb-4">
             <Award size={13} />
-            <span>Biometrische Augenoptik</span>
+            <span>Augenvermessung • Moderne Technik trifft persönliche Meisterberatung</span>
           </span>
-          <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">
-            Präzise Sehanalyse statt <br />
+          <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight text-[#161719] dark:text-white">
+            Präzision für <br />
             <span className="font-serif italic font-normal text-[#D13426]">
-              pauschaler Standardwerte.
+              Ihre Augen.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-[#161719]/70 leading-relaxed font-light">
-            Weil jedes Auge so einzigartig ist wie ein Fingerabdruck, vermessen wir Ihre Augen mit dem Rodenstock DNEye® Scanner nicht nur statisch, sondern erfassen relevante biometrische Parameter für maßgefertigten Sehkomfort.
+          <p className="text-base sm:text-lg text-[#161719]/75 dark:text-white/75 leading-relaxed font-light">
+            Jedes Auge ist einzigartig. Deshalb nehmen wir uns Zeit für eine sorgfältige und präzise Augenvermessung. Mit moderner Messtechnik bestimmen wir Ihre Sehwerte und schaffen die Grundlage für Brillengläser, die optimal zu Ihnen passen.
           </p>
         </div>
 
@@ -119,16 +119,16 @@ export const FeaturesMicroUI: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
           {/* Card 1 */}
-          <div className="bg-white rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-sm border border-[#161719]/10 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-[#202226] rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-sm border border-[#161719]/10 dark:border-white/10 flex flex-col justify-between hover:shadow-md transition-all">
             <div>
               <div className="flex justify-between items-center mb-6">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#161719]/70 flex items-center gap-2">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#161719]/70 dark:text-white/70 flex items-center gap-2">
                   <Activity size={14} className="text-[#D13426]" />
                   Biometrie Profil
                 </span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#D13426] animate-pulse" />
               </div>
-              <p className="text-xs text-[#161719]/60 mb-6">
+              <p className="text-xs text-[#161719]/60 dark:text-white/60 mb-6">
                 Rodenstock DNEye® Analyse-Parameter:
               </p>
             </div>
@@ -137,7 +137,7 @@ export const FeaturesMicroUI: React.FC = () => {
               {shufflerData.map((data, i) => (
                 <div
                   key={data.label}
-                  className="absolute w-full bg-[#FAF8F5] rounded-2xl p-4 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#161719]/10 shadow-sm"
+                  className="absolute w-full bg-[#FAF8F5] dark:bg-[#161719] rounded-2xl p-4 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#161719]/10 dark:border-white/10 shadow-sm"
                   style={{
                     top: `${i * 0.9}rem`,
                     transform: `scale(${1 - i * 0.04})`,
@@ -148,16 +148,16 @@ export const FeaturesMicroUI: React.FC = () => {
                 >
                   <div className={`transition-opacity duration-300 ${i === 0 ? "opacity-100" : "opacity-0"}`}>
                     <div className="flex justify-between items-center mb-1.5">
-                      <p className="text-xs font-semibold text-[#161719]">{data.label}</p>
+                      <p className="text-xs font-semibold text-[#161719] dark:text-white">{data.label}</p>
                       <span className="font-mono text-[10px] uppercase font-bold text-[#D13426] bg-[#D13426]/10 px-2 py-0.5 rounded-full">
                         {data.status}
                       </span>
                     </div>
                     <div className="flex justify-between items-end">
-                      <span className="font-mono text-xl font-bold text-[#161719]">
+                      <span className="font-mono text-xl font-bold text-[#161719] dark:text-white">
                         {data.value}
                       </span>
-                      <span className="text-[11px] font-mono text-[#161719]/60">
+                      <span className="text-[11px] font-mono text-[#161719]/60 dark:text-white/60">
                         Biometrisch exakt
                       </span>
                     </div>
@@ -168,7 +168,7 @@ export const FeaturesMicroUI: React.FC = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#161719] rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-xl text-white flex flex-col justify-between">
+          <div className="bg-[#161719] dark:bg-[#111214] rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-xl text-white flex flex-col justify-between border border-white/10">
             <div>
               <div className="flex justify-between items-center mb-6">
                 <span className="font-mono text-xs uppercase tracking-wider text-white/60">
@@ -209,12 +209,12 @@ export const FeaturesMicroUI: React.FC = () => {
           {/* Card 3 */}
           <div
             ref={card3Ref}
-            className="bg-white rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-sm border border-[#161719]/10 flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer"
+            className="bg-white dark:bg-[#202226] rounded-[2.5rem] p-7 md:p-8 h-88 relative overflow-hidden shadow-sm border border-[#161719]/10 dark:border-white/10 flex flex-col justify-between hover:shadow-md transition-all cursor-pointer"
             onClick={() => openBooking("meister")}
           >
             <div>
               <div className="flex justify-between items-center mb-4">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#161719]/70 flex items-center gap-2">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#161719]/70 dark:text-white/70 flex items-center gap-2">
                   <Clock size={13} className="text-[#D13426]" />
                   Meistertermin wählen
                 </span>
@@ -222,7 +222,7 @@ export const FeaturesMicroUI: React.FC = () => {
                   Exklusiv
                 </span>
               </div>
-              <p className="text-xs text-[#161719]/60 mb-3">
+              <p className="text-xs text-[#161719]/60 dark:text-white/60 mb-3">
                 Wunschzeit für Ihre persönliche Beratung reservieren:
               </p>
             </div>
@@ -236,7 +236,7 @@ export const FeaturesMicroUI: React.FC = () => {
               {[...Array(14)].map((_, i) => (
                 <div
                   key={i}
-                  className={`aspect-square rounded-lg flex items-center justify-center text-xs font-semibold bg-[#FAF8F5] text-[#161719] transition-colors ${
+                  className={`aspect-square rounded-lg flex items-center justify-center text-xs font-semibold bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-white transition-colors ${
                     i === 10 ? "calendar-target-day" : ""
                   }`}
                 >
@@ -246,8 +246,8 @@ export const FeaturesMicroUI: React.FC = () => {
             </div>
 
             <div className="flex justify-between items-center pt-2">
-              <span className="text-[11px] font-mono text-[#161719]/60">Keine Wartezeiten</span>
-              <button className="calendar-save-btn px-4 py-2 bg-[#161719] text-white text-[11px] font-mono uppercase tracking-wider rounded-full flex items-center gap-1.5 shadow-sm">
+              <span className="text-[11px] font-mono text-[#161719]/60 dark:text-white/60">Keine Wartezeiten</span>
+              <button className="calendar-save-btn px-4 py-2 bg-[#161719] dark:bg-white text-white dark:text-[#161719] text-[11px] font-mono uppercase tracking-wider rounded-full flex items-center gap-1.5 shadow-sm transition-colors">
                 <span>Termin wählen</span>
                 <CheckCircle2 size={12} className="text-[#D13426]" />
               </button>

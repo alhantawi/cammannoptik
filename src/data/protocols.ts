@@ -3,42 +3,43 @@ import { ProtocolCard } from "@/types";
 export const protocolCards: ProtocolCard[] = [
   {
     id: "01",
-    title: "Präzise Sehanalyse",
-    subtitle: "Biometrische Vermessung",
-    desc: "Die Basis für entspanntes Sehen ist eine absolut exakte Bestimmung Ihrer Sehstärke. Bei Cammann Optik ist die Sehanalyse Chefsache – mit modernster Rodenstock DNEye® Wellenfront-Technologie und der nötigen Ruhe für Ihre persönliche Beratung.",
-    tag: "Sehanalyse & Beratung",
+    title: "So individuell wie Ihre Augen.",
+    subtitle: "Hochwertige Gläser • Präzise Anpassung • Persönliche Beratung",
+    desc: "Kein Sehen ist wie das andere. Ob Einstärkengläser für den Alltag, moderne Gleitsichtgläser, spezielle Arbeitsplatzbrillen oder Sonnenschutz – wir finden das Glas, das perfekt zu Ihren Sehgewohnheiten passt.",
+    tag: "Brillengläser",
     features: [
-      "Hochpräzise Messung in 0,01-dpt-Schritten",
-      "Erfassung von Tag- und Nachtsehen (Pupillengröße)",
-      "Individuelle Analyse relevanter Augenparameter"
+      "Hochwertige Gläser für Alltag & Gleitsicht",
+      "Spezielle Arbeitsplatzbrillen & Blaulichtfilter",
+      "Zuverlässiger Sonnenschutz mit 100% UV-Schutz",
+      "Präzise Zentrierung & persönliche Beratung"
     ],
     graphicType: "radial"
   },
   {
     id: "02",
-    title: "Maßgefertigte Sehlösungen",
-    subtitle: "Brillengläser & Kontaktlinsen",
-    desc: "Ihre Sehlösung ist so individuell wie Sie. Wir führen handverlesene Manufaktur-Fassungen, berechnen biometrische Gleitsichtgläser und passen weiche sowie formstabile Kontaktlinsen maßgeschneidert an Ihre Augen an.",
-    tag: "Handwerk & Maßanfertigung",
+    title: "Gutes Sehen ohne Brille.",
+    subtitle: "Individuell angepasst für besten Tragekomfort",
+    desc: "Kontaktlinsen bieten Freiheit – im Alltag, beim Sport oder zu besonderen Anlässen. Wir finden die passenden Linsen für Ihre Augen und begleiten Sie von der ersten Anpassung bis zur regelmäßigen Kontrolle.",
+    tag: "Kontaktlinsen",
     features: [
-      "Individuelle Freiform-Gleitsichtglasberechnung",
-      "Kontaktlinsenanpassung (auch bei Hornhautverkrümmung)",
-      "Manufaktur-Fassungen von Lunor, Morel, Escada & Maui Jim",
-      "Präzisionszentrierung mit digitaler Video-Vermessung"
+      "Freiheit im Alltag, Sport & zu besonderen Anlässen",
+      "Individuelle Anpassung an Ihre Hornhaut-Geometrie",
+      "Tages-, Monats- und formstabile Speziallinsen",
+      "Begleitung von der Erstanpassung bis zur Kontrolle"
     ],
     graphicType: "scan"
   },
   {
     id: "03",
-    title: "Sehkomfort & Spezialanpassung",
-    subtitle: "Arbeitsplatz & Myopie",
-    desc: "Kopfschmerzen, brennende Augen oder schnelle Ermüdung bei Bildschirmarbeit? Mit einer fundierten MKH-Analyse optimieren wir das beidäugige Sehen. Zudem bieten wir Myopie-Vorsorge für Kinder und Jugendliche sowie Linsen bei trockenen Augen.",
-    tag: "Spezial-Sehanalyse",
+    title: "Wir sind auch nach dem Kauf für Sie da.",
+    subtitle: "Eigener Werkstattservice für Ihre Brille",
+    desc: "Guter Service endet nicht mit dem Kauf. Ob Brillenanpassung, professionelle Reinigung, kleinere Reparaturen oder einfach eine Schraube nachziehen – wir sind für Sie da. Schnell, unkompliziert und meisterhaft.",
+    tag: "Service & Werkstatt",
     features: [
-      "Mess- und Korrektionsmethodik nach Haase (MKH)",
-      "Spezifische Bildschirmarbeitsplatz-Optimierung",
-      "Kontaktlinsen-Lösungen bei trockenen Augen",
-      "Hauseigene Werkstatt für sofortige Reparaturen & Service"
+      "Eigener Werkstattservice direkt in Hannover",
+      "Kostenlose Ultraschallreinigung & anatomischer Sitzcheck",
+      "Kleinere Reparaturen & Schrauben nachziehen",
+      "Schnell, unkompliziert und meisterhaft"
     ],
     graphicType: "wave"
   }

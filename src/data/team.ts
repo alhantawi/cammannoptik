@@ -13,16 +13,16 @@ export const teamMembers: TeamMember[] = [
     name: "Ismaeel Sheikh Ali",
     role: "Inhaber & Augenoptikermeister",
     credentials: "Staatlich geprüfter Augenoptiker & Meisterbrief der Handwerkskammer",
-    image: "/2.jpeg", // Studio consultation desk atmosphere
-    quote: "Gutes Sehen ist das Fundament für Lebensfreude. Bei uns zählt nicht das schnelle Geschäft, sondern die perfekte Sehlösung für Ihren Alltag.",
-    bio: "Als Augenoptikermeister verbindet Ismaeel Sheikh Ali moderne biometrische Messtechnik mit handwerklicher Präzision und persönlicher Beratung. Jedes Brillenglas wird in unserer hauseigenen Werkstatt millimetergenau auf Ihre individuellen Sehachsen eingearbeitet.",
+    image: "/Ismaeel_Sheikh_Ali.jpeg",
+    quote: "Als heutiger Inhaber und Augenoptikermeister ist es mir eine Herzensangelegenheit, diese lange Tradition weiterzuführen – mit persönlicher Beratung, ehrlichem Handwerk und neuen Ideen.",
+    bio: "Cammann Optik gehört seit 1949 zur Augenoptik in Hannover. Wir verbinden traditionelles Handwerk mit moderner Technik und nehmen uns Zeit für Sie, Ihre Augen und Ihre Wünsche. Jede Sehlösung wird bei uns mit meisterlicher Sorgfalt und Leidenschaft geschaffen.",
     specializations: [
-      "Zertifizierter Rodenstock DNEye® Biometrie-Experte",
-      "Spezialist für komplexe Freiform-Gleitsichtgläser",
-      "Kontaktlinsen-Anpassung & Nachkontrollen",
-      "Binokularsehen & Winkelfehlsichtigkeit (MKH)",
-      "Typ- & Stilberatung für internationale Manufakturen",
-      "Hauseigene Meisterwerkstatt & Reparaturen"
+      "Augenoptikermeister & Inhaber",
+      "Präzise 3D-Augenvermessung & DNEye® Biometrie",
+      "Individuelle Gleitsicht-, Arbeitsplatz- & Einstärkengläser",
+      "Kontaktlinsenanpassung für Alltag & Sport",
+      "Kuratierte Fassungen & Manufakturen (Lunor, Morel, Escada, etc.)",
+      "Hauseigene Meisterwerkstatt, Service & Reparaturen"
     ]
   }
 ];

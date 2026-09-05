@@ -13,16 +13,16 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen bg-[#FAF8F5] overflow-x-hidden">
+    <main className="relative w-full min-h-screen bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-[#FAF8F5] transition-colors duration-500 overflow-x-hidden">
       <Navbar />
       <Hero />
       <StudioTour />
-      <BrandGallery />
       <TeamSection />
       <FeaturesMicroUI />
-      <VisionSimulator />
-      <Philosophy />
+      {/* <VisionSimulator /> */}
+      <BrandGallery />
       <ProtocolStack />
+      {/* <Philosophy /> */}
       <ReviewsSection />
       <FaqSection />
       <Footer />

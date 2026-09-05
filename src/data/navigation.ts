@@ -1,9 +1,9 @@
 export const navigationLinks = [
   { label: "Studio", href: "#studio-tour" },
-  { label: "Marken", href: "#marken" },
-  { label: "Biometrie", href: "#vision-lab" },
-  { label: "Leistungen", href: "#leistungen" },
   { label: "Über uns", href: "#ueber-uns" },
+  { label: "Vermessung", href: "#augenvermessung" },
+  { label: "Fassungen", href: "#marken" },
+  { label: "Leistungen", href: "#leistungen" },
   { label: "Rezensionen", href: "#bewertungen" },
   { label: "Kontakt", href: "#kontakt" }
 ];

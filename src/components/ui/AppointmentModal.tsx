@@ -68,12 +68,12 @@ export const AppointmentModal: React.FC = () => {
       />
 
       {/* Modal Card */}
-      <div className="relative w-full max-w-2xl bg-[#FAF8F5] rounded-[2.5rem] p-6 md:p-10 shadow-2xl border border-[#161719]/15 z-10 my-8">
+      <div className="relative w-full max-w-2xl bg-[#FAF8F5] dark:bg-[#1C1E22] text-[#161719] dark:text-[#FAF8F5] rounded-[2.5rem] p-6 md:p-10 shadow-2xl border border-[#161719]/15 dark:border-white/15 z-10 my-8 transition-colors duration-300">
         
         {/* Close Button */}
         <button
           onClick={closeBooking}
-          className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white hover:bg-[#ECE7DF] text-[#161719] flex items-center justify-center transition-colors border border-[#161719]/10 shadow-sm cursor-pointer"
+          className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white dark:bg-white/10 hover:bg-[#ECE7DF] dark:hover:bg-white/20 text-[#161719] dark:text-white flex items-center justify-center transition-colors border border-[#161719]/10 dark:border-white/10 shadow-sm cursor-pointer"
           aria-label="Schließen"
         >
           <X size={18} />
@@ -87,29 +87,29 @@ export const AppointmentModal: React.FC = () => {
             <span className="font-mono text-xs uppercase tracking-widest text-[#D13426] font-bold">
               Reservierung erfolgreich vorgemerkt
             </span>
-            <h3 className="font-outfit text-3xl font-black text-[#161719] mt-2 mb-4">
+            <h3 className="font-outfit text-3xl font-black text-[#161719] dark:text-white mt-2 mb-4">
               Vielen Dank für Ihre Terminanfrage!
             </h3>
-            <p className="text-[#161719]/70 max-w-md mx-auto mb-8 font-light text-sm leading-relaxed">
-              Sehr geehrte/r <strong className="font-semibold text-[#161719]">{formData.fullName || "Gast"}</strong>, wir haben Ihren Wunschtermin für <span className="font-semibold text-[#D13426]">{currentServiceObj.title}</span> am <span className="font-semibold text-[#161719]">{selectedDate}</span> um <span className="font-semibold text-[#161719]">{selectedTime} Uhr</span> erhalten.
+            <p className="text-[#161719]/70 dark:text-white/70 max-w-md mx-auto mb-8 font-light text-sm leading-relaxed">
+              Sehr geehrte/r <strong className="font-semibold text-[#161719] dark:text-white">{formData.fullName || "Gast"}</strong>, wir haben Ihren Wunschtermin für <span className="font-semibold text-[#D13426]">{currentServiceObj.title}</span> am <span className="font-semibold text-[#161719] dark:text-white">{selectedDate}</span> um <span className="font-semibold text-[#161719] dark:text-white">{selectedTime} Uhr</span> erhalten.
             </p>
-            <div className="bg-white p-6 rounded-2xl border border-[#161719]/10 max-w-md mx-auto mb-8 text-left text-sm space-y-2">
+            <div className="bg-white dark:bg-[#161719] p-6 rounded-2xl border border-[#161719]/10 dark:border-white/10 max-w-md mx-auto mb-8 text-left text-sm space-y-2">
               <div className="flex justify-between">
-                <span className="text-[#161719]/60">Leistung:</span>
-                <span className="font-semibold text-[#161719]">{currentServiceObj.title}</span>
+                <span className="text-[#161719]/60 dark:text-white/60">Leistung:</span>
+                <span className="font-semibold text-[#161719] dark:text-white">{currentServiceObj.title}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#161719]/60">Dauer:</span>
+                <span className="text-[#161719]/60 dark:text-white/60">Dauer:</span>
                 <span className="font-mono text-[#D13426] font-bold">{currentServiceObj.duration}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#161719]/60">E-Mail:</span>
-                <span className="text-[#161719]">{formData.email}</span>
+                <span className="text-[#161719]/60 dark:text-white/60">E-Mail:</span>
+                <span className="text-[#161719] dark:text-white">{formData.email}</span>
               </div>
             </div>
             <button
               onClick={handleResetAndClose}
-              className="luxury-btn px-8 py-3.5 bg-[#161719] text-white hover:bg-[#232529] rounded-full text-xs font-semibold uppercase tracking-wider font-mono shadow-md cursor-pointer"
+              className="luxury-btn px-8 py-3.5 bg-[#161719] dark:bg-[#FAF8F5] text-white dark:text-[#161719] hover:bg-[#232529] dark:hover:bg-white rounded-full text-xs font-semibold uppercase tracking-wider font-mono shadow-md cursor-pointer transition-colors"
             >
               <span>Fertig & Schließen</span>
             </button>
@@ -125,11 +125,11 @@ export const AppointmentModal: React.FC = () => {
                   <span>Meistertermin</span>
                 </div>
               </div>
-              <h3 className="font-outfit text-2xl sm:text-3xl font-black text-[#161719]">
+              <h3 className="font-outfit text-2xl sm:text-3xl font-black text-[#161719] dark:text-white">
                 Termin im Studio Hannover
               </h3>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-1">
-                <p className="text-sm text-[#161719]/70 font-light">
+                <p className="text-sm text-[#161719]/70 dark:text-white/70 font-light">
                   Betreuung persönlich durch den Augenoptikermeister. Ohne Wartezeit.
                 </p>
                 <a
@@ -144,7 +144,7 @@ export const AppointmentModal: React.FC = () => {
             </div>
 
             {/* Stepper Tabs */}
-            <div className="flex items-center justify-between gap-2 mb-8 bg-white p-1.5 rounded-2xl border border-[#161719]/10">
+            <div className="flex items-center justify-between gap-2 mb-8 bg-white dark:bg-[#161719] p-1.5 rounded-2xl border border-[#161719]/10 dark:border-white/10">
               {[
                 { s: 1, title: "1. Beratungswahl" },
                 { s: 2, title: "2. Datum & Zeit" },
@@ -155,8 +155,8 @@ export const AppointmentModal: React.FC = () => {
                   onClick={() => setStep(item.s as 1 | 2 | 3)}
                   className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                     step === item.s
-                      ? "bg-[#161719] text-white shadow-sm"
-                      : "text-[#161719]/60 hover:text-[#161719]"
+                      ? "bg-[#161719] dark:bg-white text-white dark:text-[#161719] shadow-sm"
+                      : "text-[#161719]/60 dark:text-white/60 hover:text-[#161719] dark:hover:text-white"
                   }`}
                 >
                   {item.title}
@@ -175,8 +175,8 @@ export const AppointmentModal: React.FC = () => {
                         onClick={() => setCustomService(s.id)}
                         className={`p-4 rounded-2xl border cursor-pointer transition-all flex flex-col justify-between ${
                           service === s.id
-                            ? "bg-[#161719] text-white border-[#161719] shadow-md ring-2 ring-[#D13426]"
-                            : "bg-white text-[#161719] border-[#161719]/10 hover:border-[#161719]/30"
+                            ? "bg-[#161719] dark:bg-[#D13426] text-white border-[#161719] dark:border-[#D13426] shadow-md ring-2 ring-[#D13426] dark:ring-white/40"
+                            : "bg-white dark:bg-[#161719] text-[#161719] dark:text-white border-[#161719]/10 dark:border-white/10 hover:border-[#161719]/30 dark:hover:border-white/30"
                         }`}
                       >
                         <div>
@@ -191,7 +191,7 @@ export const AppointmentModal: React.FC = () => {
                             </span>
                           </div>
                           <h4 className="font-outfit font-bold text-base mb-1">{s.title}</h4>
-                          <p className={`text-xs line-clamp-2 ${service === s.id ? "text-white/80" : "text-[#161719]/60"}`}>
+                          <p className={`text-xs line-clamp-2 ${service === s.id ? "text-white/80" : "text-[#161719]/60 dark:text-white/60"}`}>
                             {s.subtitle}
                           </p>
                         </div>
@@ -215,8 +215,8 @@ export const AppointmentModal: React.FC = () => {
               {/* STEP 2 */}
               {step === 2 && (
                 <div className="space-y-6 animate-in fade-in duration-200">
-                  <div className="bg-white p-6 rounded-2xl border border-[#161719]/10">
-                    <label className="block text-xs font-mono uppercase text-[#161719] mb-3 flex items-center gap-2 font-bold">
+                  <div className="bg-white dark:bg-[#161719] p-6 rounded-2xl border border-[#161719]/10 dark:border-white/10">
+                    <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-3 flex items-center gap-2 font-bold">
                       <Calendar size={14} className="text-[#D13426]" />
                       Wunschdatum im Studio Hannover
                     </label>
@@ -225,19 +225,19 @@ export const AppointmentModal: React.FC = () => {
                       value={selectedDate}
                       min={new Date().toISOString().split("T")[0]}
                       onChange={(e) => setSelectedDate(e.target.value)}
-                      className="w-full bg-[#FAF8F5] border border-[#161719]/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426]"
+                      className="w-full bg-[#FAF8F5] dark:bg-[#202226] border border-[#161719]/15 dark:border-white/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] text-[#161719] dark:text-white"
                       required
                     />
                     {isSaturday && (
-                      <div className="mt-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-amber-900 flex items-center gap-2">
+                      <div className="mt-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-amber-900 dark:text-amber-200 flex items-center gap-2">
                         <Clock size={13} className="text-amber-600 shrink-0" />
                         <span>Hinweis: Samstags Termine ausschließlich nach vorheriger Vereinbarung.</span>
                       </div>
                     )}
                   </div>
 
-                  <div className="bg-white p-6 rounded-2xl border border-[#161719]/10">
-                    <label className="block text-xs font-mono uppercase text-[#161719] mb-3 flex items-center gap-2 font-bold">
+                  <div className="bg-white dark:bg-[#161719] p-6 rounded-2xl border border-[#161719]/10 dark:border-white/10">
+                    <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-3 flex items-center gap-2 font-bold">
                       <Clock size={14} className="text-[#D13426]" />
                       Verfügbare Uhrzeit
                     </label>
@@ -250,7 +250,7 @@ export const AppointmentModal: React.FC = () => {
                           className={`py-2.5 px-3 rounded-xl font-mono text-xs transition-all cursor-pointer ${
                             selectedTime === time
                               ? "bg-[#D13426] text-white font-bold shadow-sm"
-                              : "bg-[#FAF8F5] text-[#161719] hover:bg-[#ECE7DF]"
+                              : "bg-[#FAF8F5] dark:bg-[#202226] text-[#161719] dark:text-white hover:bg-[#ECE7DF] dark:hover:bg-white/10"
                           }`}
                         >
                           {time} Uhr
@@ -263,7 +263,7 @@ export const AppointmentModal: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setStep(1)}
-                      className="px-5 py-2.5 rounded-full text-xs font-semibold text-[#161719]/70 hover:text-[#161719] cursor-pointer"
+                      className="px-5 py-2.5 rounded-full text-xs font-semibold text-[#161719]/70 dark:text-white/70 hover:text-[#161719] dark:hover:text-white cursor-pointer"
                     >
                       Zurück
                     </button>
@@ -284,7 +284,7 @@ export const AppointmentModal: React.FC = () => {
                 <div className="space-y-4 animate-in fade-in duration-200">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono uppercase text-[#161719] mb-1.5 flex items-center gap-1.5 font-bold">
+                      <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-1.5 flex items-center gap-1.5 font-bold">
                         <User size={13} className="text-[#D13426]" />
                         Vollständiger Name *
                       </label>
@@ -294,12 +294,12 @@ export const AppointmentModal: React.FC = () => {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         required
-                        className="w-full bg-white border border-[#161719]/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426]"
+                        className="w-full bg-white dark:bg-[#202226] border border-[#161719]/15 dark:border-white/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] text-[#161719] dark:text-white placeholder:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono uppercase text-[#161719] mb-1.5 flex items-center gap-1.5 font-bold">
+                      <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-1.5 flex items-center gap-1.5 font-bold">
                         <Mail size={13} className="text-[#D13426]" />
                         E-Mail-Adresse *
                       </label>
@@ -309,13 +309,13 @@ export const AppointmentModal: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        className="w-full bg-white border border-[#161719]/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426]"
+                        className="w-full bg-white dark:bg-[#202226] border border-[#161719]/15 dark:border-white/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] text-[#161719] dark:text-white placeholder:text-gray-400"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase text-[#161719] mb-1.5 flex items-center gap-1.5 font-bold">
+                    <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-1.5 flex items-center gap-1.5 font-bold">
                       <Phone size={13} className="text-[#D13426]" />
                       Telefonnummer für Terminbestätigung *
                     </label>
@@ -325,12 +325,12 @@ export const AppointmentModal: React.FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
-                      className="w-full bg-white border border-[#161719]/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426]"
+                      className="w-full bg-white dark:bg-[#202226] border border-[#161719]/15 dark:border-white/15 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] text-[#161719] dark:text-white placeholder:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase text-[#161719] mb-1.5 font-bold">
+                    <label className="block text-xs font-mono uppercase text-[#161719] dark:text-white mb-1.5 font-bold">
                       Besondere Wünsche (z.B. Gleitsichtglas, Kontaktlinsen, Lunor-Fassung)
                     </label>
                     <textarea
@@ -338,21 +338,21 @@ export const AppointmentModal: React.FC = () => {
                       placeholder="Optional: Haben Sie bereits Brillenwerte oder konkrete Fassungs- oder Linsenwünsche?"
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full bg-white border border-[#161719]/15 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] resize-none"
+                      className="w-full bg-white dark:bg-[#202226] border border-[#161719]/15 dark:border-white/15 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D13426] text-[#161719] dark:text-white placeholder:text-gray-400 resize-none"
                     />
                   </div>
 
                   {/* Datenschutz-Einwilligung */}
-                  <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#161719]/10">
+                  <div className="bg-[#FAF8F5] dark:bg-[#161719] p-3.5 rounded-xl border border-[#161719]/10 dark:border-white/10">
                     <label className="flex items-start gap-2.5 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={privacyConsent}
                         onChange={(e) => setPrivacyConsent(e.target.checked)}
                         required
-                        className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#D13426] focus:ring-[#D13426] shrink-0"
+                        className="mt-0.5 h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-[#D13426] focus:ring-[#D13426] shrink-0"
                       />
-                      <span className="text-xs text-[#161719]/80 leading-relaxed font-light">
+                      <span className="text-xs text-[#161719]/80 dark:text-white/80 leading-relaxed font-light">
                         Ich habe die{" "}
                         <a
                           href="/datenschutz"
@@ -367,11 +367,11 @@ export const AppointmentModal: React.FC = () => {
                     </label>
                   </div>
 
-                  <div className="flex justify-between items-center pt-3 border-t border-[#161719]/10">
+                  <div className="flex justify-between items-center pt-3 border-t border-[#161719]/10 dark:border-white/10">
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="px-5 py-2.5 rounded-full text-xs font-semibold text-[#161719]/70 hover:text-[#161719] cursor-pointer"
+                      className="px-5 py-2.5 rounded-full text-xs font-semibold text-[#161719]/70 dark:text-white/70 hover:text-[#161719] dark:hover:text-white cursor-pointer"
                     >
                       Zurück
                     </button>

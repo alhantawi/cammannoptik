@@ -50,7 +50,7 @@ export const StudioTour: React.FC = () => {
   const current = studioViews[activePhoto];
 
   return (
-    <section id="studio-tour" className="py-28 px-6 md:px-16 bg-[#FAF8F5] text-[#161719] relative">
+    <section id="studio-tour" className="py-28 px-6 md:px-16 bg-[#FAF8F5] dark:bg-[#161719] text-[#161719] dark:text-[#FAF8F5] transition-colors duration-500 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Heading */}
@@ -58,26 +58,26 @@ export const StudioTour: React.FC = () => {
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#D13426] bg-[#D13426]/10 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 mb-3">
               <Sparkles size={13} />
-              <span>Authentische Einblicke</span>
+              <span>Cammann Optik – Meisterhaft seit 1949</span>
             </span>
-            <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#161719]">
+            <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#161719] dark:text-white">
               Willkommen bei <span className="font-serif italic font-normal text-[#D13426]">Cammann Optik</span>
             </h2>
-            <p className="text-[#161719]/70 max-w-xl text-base font-light mt-2">
-              Erleben Sie unser Fachgeschäft in Hannover. Hier verschmelzen meisterliche Handwerkskunst, High-End Messtechnik und familiäre Gastfreundschaft.
+            <p className="text-[#161719]/70 dark:text-white/70 max-w-xl text-base font-light mt-2">
+              Seit 1949 in Hannover. Hier verbinden wir meisterliches Handwerk mit moderner Technik und viel Leidenschaft für gutes Sehen.
             </p>
           </div>
 
           {/* Tab Selector */}
-          <div className="flex flex-wrap gap-2 bg-[#ECE7DF] p-1.5 rounded-2xl border border-[#161719]/5">
+          <div className="flex flex-wrap gap-2 bg-[#ECE7DF] dark:bg-white/5 p-1.5 rounded-2xl border border-[#161719]/5 dark:border-white/10">
             {studioViews.map((item, idx) => (
               <button
                 key={item.id}
                 onClick={() => setActivePhoto(idx as 0 | 1 | 2)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   activePhoto === idx
-                    ? "bg-[#161719] text-white shadow-md"
-                    : "text-[#161719]/70 hover:text-[#161719]"
+                    ? "bg-[#161719] dark:bg-white text-white dark:text-[#161719] shadow-md"
+                    : "text-[#161719]/70 dark:text-white/70 hover:text-[#161719] dark:hover:text-white"
                 }`}
               >
                 {idx === 0 && "1. Das Studio"}
@@ -89,7 +89,7 @@ export const StudioTour: React.FC = () => {
         </div>
 
         {/* Studio Showcase Card */}
-        <div className="bg-white rounded-[3rem] p-6 sm:p-10 md:p-12 shadow-xl border border-[#161719]/5 flex flex-col lg:flex-row gap-10 items-center">
+        <div className="bg-white dark:bg-[#202226] rounded-[3rem] p-6 sm:p-10 md:p-12 shadow-xl border border-[#161719]/5 dark:border-white/10 flex flex-col lg:flex-row gap-10 items-center transition-colors duration-500">
           
           {/* Real Photo */}
           <div className="w-full lg:w-3/5 h-[380px] sm:h-[480px] rounded-[2.5rem] overflow-hidden relative group shadow-lg">
@@ -118,17 +118,17 @@ export const StudioTour: React.FC = () => {
               <span className="font-mono text-xs uppercase tracking-widest text-[#D13426] font-semibold">
                 {current.subtitle}
               </span>
-              <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-[#161719] mt-2 mb-4 leading-tight">
+              <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-[#161719] dark:text-white mt-2 mb-4 leading-tight">
                 {current.title}
               </h3>
-              <p className="text-sm sm:text-base text-[#161719]/75 font-light leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-[#161719]/75 dark:text-white/75 font-light leading-relaxed mb-6">
                 {current.desc}
               </p>
 
               {/* Checklist */}
               <div className="space-y-3 pt-2">
                 {current.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#161719]/90 font-medium">
+                  <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#161719]/90 dark:text-white/90 font-medium">
                     <CheckCircle size={17} className="text-[#D13426] shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -136,16 +136,16 @@ export const StudioTour: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-[#161719]/10 flex items-center justify-between">
+            <div className="pt-4 border-t border-[#161719]/10 dark:border-white/10 flex items-center justify-between">
               <button
                 onClick={() => openBooking("meister")}
-                className="luxury-btn bg-[#161719] hover:bg-[#232529] text-white px-6 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-md cursor-pointer"
+                className="luxury-btn bg-[#161719] dark:bg-[#FAF8F5] hover:bg-[#232529] dark:hover:bg-white text-white dark:text-[#161719] px-6 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-md cursor-pointer transition-colors"
               >
                 <span>Termin vor Ort vereinbaren</span>
                 <ArrowRight size={14} />
               </button>
 
-              <span className="font-mono text-xs text-[#161719]/50">
+              <span className="font-mono text-xs text-[#161719]/50 dark:text-white/50">
                 0{activePhoto + 1} / 03
               </span>
             </div>

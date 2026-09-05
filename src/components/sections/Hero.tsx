@@ -48,27 +48,29 @@ export const Hero: React.FC = () => {
         <div className="hero-anim flex flex-wrap items-center gap-3 mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 font-mono text-xs uppercase tracking-widest text-[#FAF8F5]">
             <span className="w-2 h-2 rounded-full bg-[#D13426] animate-pulse" />
-            <span>Ihr Augenoptikermeister in Hannover</span>
+            <span>Meistergeführter Augenoptikbetrieb • Hannover seit 1949</span>
           </div>
 
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D13426]/20 border border-[#D13426]/40 font-mono text-xs text-white">
             <Sparkles size={13} className="text-[#D13426]" />
-            <span>Rodenstock DNEye® Biometrie-Zentrum</span>
+            <span>Persönlich & meisterhaft</span>
           </div>
         </div>
 
         {/* Headlines */}
-        <h1 className="hero-anim font-outfit text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight mb-5 text-white">
-          Persönliche Sehberatung, <br className="hidden sm:inline" />
+        <h1 className="hero-anim font-outfit text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight mb-5 text-white">
+          Gutes Sehen beginnt <br className="hidden sm:inline" />
           <span className="font-serif italic font-normal text-[#FAF8F5]">
-            biometrische Augenvermessung
-          </span>{" "}
-          <br className="hidden sm:inline" />
-          & maßgefertigte Brillen.
+            mit Vertrauen.
+          </span>
         </h1>
 
-        <p className="hero-anim text-base sm:text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed mb-10">
-          Bei Cammann Optik werden Sie persönlich vom Augenoptikermeister betreut – von der ausführlichen Sehanalyse bis zur fertigen Brille. Individuell für Sie gefertigt in unserer hauseigenen Meisterwerkstatt.
+        <p className="hero-anim text-base sm:text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed mb-6">
+          Seit <strong className="font-semibold text-white">1949</strong> steht Cammann Optik in Hannover für gutes Sehen und persönliche Beratung. Als <strong className="font-semibold text-white">meistergeführter Augenoptikbetrieb</strong> verbinden wir traditionelles Handwerk mit moderner Technik und viel Leidenschaft für unseren Beruf.
+        </p>
+
+        <p className="hero-anim text-sm sm:text-base font-medium text-white/80 max-w-2xl leading-relaxed mb-10 border-l-2 border-[#D13426] pl-4 italic font-serif">
+          „Wir nehmen uns Zeit für Sie, Ihre Augen und Ihre Wünsche.“
         </p>
 
         {/* CTA Actions and Studio Pill */}
@@ -93,19 +95,19 @@ export const Hero: React.FC = () => {
         <div className="hero-anim grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/10 text-xs text-white/75 font-mono">
           <div className="flex items-center gap-2">
             <ShieldCheck size={16} className="text-[#D13426] shrink-0" />
-            <span>100% Augenoptikermeister</span>
+            <span>Meisterbetrieb seit 1949</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-[#D13426] shrink-0" />
-            <span>Rodenstock DNEye® Biometrie</span>
+            <span>Persönliche Beratung</span>
           </div>
           <div className="flex items-center gap-2">
             <Sparkles size={16} className="text-[#D13426] shrink-0" />
-            <span>Lunor & Morel Manufakturen</span>
+            <span>Moderne Messtechnik</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-[#D13426] shrink-0" />
-            <span>Zentrale Lage Hannover</span>
+            <span>Königstraße 44, Hannover</span>
           </div>
         </div>
 

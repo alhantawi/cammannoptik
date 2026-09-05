@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   const { openBooking } = useAppointment();
 
   return (
-    <footer id="kontakt" className="bg-[#161719] text-white pt-20 pb-12 px-6 md:px-16 border-t border-white/10 relative overflow-hidden">
+    <footer id="kontakt" className="bg-white dark:bg-[#161719] text-[#161719] dark:text-white pt-20 pb-12 px-6 md:px-16 border-t border-[#161719]/10 dark:border-white/10 relative overflow-hidden transition-colors duration-500">
       
       {/* Background glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D13426]/10 rounded-full blur-3xl pointer-events-none" />
@@ -18,15 +18,15 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Top Booking Banner */}
-        <div className="bg-gradient-to-r from-[#232529] to-[#1A1B1E] rounded-[2.5rem] p-8 md:p-12 mb-20 border border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-2xl">
+        <div className="bg-[#FAF8F5] dark:bg-gradient-to-r dark:from-[#232529] dark:to-[#1A1B1E] rounded-[2.5rem] p-8 md:p-12 mb-20 border border-[#161719]/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 shadow-xl transition-colors duration-500">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#D13426] bg-[#D13426]/15 px-3 py-1 rounded-full inline-block mb-3 font-bold">
               Terminvereinbarung
             </span>
-            <h3 className="font-outfit text-3xl md:text-4xl font-black text-white mb-2">
+            <h3 className="font-outfit text-3xl md:text-4xl font-black text-[#161719] dark:text-white mb-2">
               Bereit für Ihr neues Seherlebnis?
             </h3>
-            <p className="text-white/70 max-w-xl text-sm md:text-base font-light">
+            <p className="text-[#161719]/70 dark:text-white/70 max-w-xl text-sm md:text-base font-light">
               Vereinbaren Sie Ihren persönlichen Termin beim Augenoptikermeister im Cammann Studio Hannover.
             </p>
           </div>
@@ -48,11 +48,11 @@ export const Footer: React.FC = () => {
               <CammannLogo className="h-8 sm:h-9 w-auto" />
             </div>
 
-            <p className="text-white/65 mb-6 max-w-md font-light leading-relaxed text-sm">
-              Ihr Meisterbetrieb für biometrische 3D-Augenglasbestimmung, handgefertigte Designerfassungen von Lunor, Escada, Maui Jim, Morel und persönliche augenoptische Beratung in Hannover.
+            <p className="text-[#161719]/65 dark:text-white/65 mb-6 max-w-md font-light leading-relaxed text-sm">
+              Cammann Optik – Ihr meistergeführter Augenoptikbetrieb in Hannover seit 1949. Persönliche Beratung, handwerkliche Präzision, moderne Messtechnik und handverlesene Brillenmanufakturen.
             </p>
 
-            <div className="inline-flex items-center gap-3 bg-white/5 px-4 py-2.5 rounded-full border border-white/10 font-mono text-xs text-white/80">
+            <div className="inline-flex items-center gap-3 bg-black/5 dark:bg-white/5 px-4 py-2.5 rounded-full border border-black/10 dark:border-white/10 font-mono text-xs text-[#161719]/80 dark:text-white/80">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Rodenstock DNEye® Mess-System Aktiv</span>
             </div>
@@ -60,14 +60,14 @@ export const Footer: React.FC = () => {
 
           {/* Contact Details */}
           <div>
-            <h4 className="font-outfit font-bold text-lg mb-6 text-white">Kontakt</h4>
-            <ul className="space-y-4 text-white/75 text-sm">
+            <h4 className="font-outfit font-bold text-lg mb-6 text-[#161719] dark:text-white">Kontakt</h4>
+            <ul className="space-y-4 text-[#161719]/75 dark:text-white/75 text-sm">
               <li>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="flex items-center gap-3 hover:text-white transition-colors group"
+                  className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
                     <Phone size={14} />
                   </div>
                   <span className="font-mono text-xs">{contactInfo.phoneDisplay}</span>
@@ -76,9 +76,9 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-3 hover:text-white transition-colors group"
+                  className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
                     <Mail size={14} />
                   </div>
                   <span>{contactInfo.email}</span>
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                   href={`https://wa.me/${contactInfo.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-white transition-colors group"
+                  className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#D13426] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] shrink-0 mt-0.5">
                   <MapPin size={14} />
                 </div>
                 <span className="text-xs leading-relaxed">
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
 
           {/* Opening Hours */}
           <div>
-            <h4 className="font-outfit font-bold text-lg mb-6 text-white flex items-center gap-2">
+            <h4 className="font-outfit font-bold text-lg mb-6 text-[#161719] dark:text-white flex items-center gap-2">
               <Clock size={16} className="text-[#D13426]" />
               <span>Öffnungszeiten</span>
             </h4>
@@ -122,8 +122,8 @@ export const Footer: React.FC = () => {
               {contactInfo.openingHours.map((item, idx) => (
                 <li
                   key={idx}
-                  className={`flex justify-between border-b border-white/10 pb-2 text-xs ${
-                    item.days.includes("Sonntag") ? "text-white/40" : "text-white/80"
+                  className={`flex justify-between border-b border-[#161719]/10 dark:border-white/10 pb-2 text-xs ${
+                    item.days.includes("Sonntag") ? "text-[#161719]/40 dark:text-white/40" : "text-[#161719]/80 dark:text-white/80"
                   }`}
                 >
                   <span>{item.days}</span>
@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <p className="text-[11px] text-white/50 mt-4 italic">
+            <p className="text-[11px] text-[#161719]/50 dark:text-white/50 mt-4 italic">
               Termine nach persönlicher Vereinbarung auch außerhalb der regulären Zeiten möglich.
             </p>
           </div>
@@ -139,16 +139,16 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white/40 border-t border-white/10 pt-8 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#161719]/40 dark:text-white/40 border-t border-[#161719]/10 dark:border-white/10 pt-8 gap-4">
           <p>© {new Date().getFullYear()} Cammann Optik Hannover. Inhaber Ismaeel Sheikh Ali.</p>
           <div className="flex items-center gap-6">
-            <a href="/impressum" className="hover:text-white transition-colors">
+            <a href="/impressum" className="hover:text-[#161719] dark:hover:text-white transition-colors">
               Impressum
             </a>
-            <a href="/datenschutz" className="hover:text-white transition-colors">
+            <a href="/datenschutz" className="hover:text-[#161719] dark:hover:text-white transition-colors">
               Datenschutz
             </a>
-            <a href="/barrierefreiheit" className="hover:text-white transition-colors">
+            <a href="/barrierefreiheit" className="hover:text-[#161719] dark:hover:text-white transition-colors">
               Barrierefreiheit
             </a>
           </div>
