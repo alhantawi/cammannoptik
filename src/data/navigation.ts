@@ -11,16 +11,26 @@ export const navigationLinks = [
 export const contactInfo = {
   brandName: "Cammann",
   brandSuffix: "Optik",
+  legalName: "Cammann Optik e. K.",
   inhaber: "Ismaeel Sheikh Ali (Augenoptikermeister)",
+  inhaberName: "Ismaeel Sheikh Ali",
+  inhaberTitle: "Augenoptikermeister",
   tagline: "Meisterbetrieb für ganzheitliche Augenoptik & biometrische 3D-Refraktion",
   phone: "+49511343628",
   phoneDisplay: "0511 343628",
   whatsapp: "491727442964",
   whatsappDisplay: "+49 172 7442964",
   email: "kundenservice@cammannoptik.de",
+  website: "https://www.cammannoptik.de",
+  websiteDisplay: "www.cammannoptik.de",
+  handelsregister: "Amtsgericht Hannover, HRA 207023",
+  handelsregisterGericht: "Amtsgericht Hannover",
+  handelsregisternummer: "HRA 207023",
+  ustId: "DE463950654",
   address: {
     street: "Königstraße 44",
     city: "30175 Hannover",
+    country: "Deutschland",
     region: "Niedersachsen, Deutschland"
   },
   openingHours: [

@@ -61,13 +61,14 @@ export default function DatenschutzPage() {
 
             <div className="text-sm leading-relaxed text-[#161719]/80 space-y-2">
               <p className="font-semibold text-[#161719]">
-                Cammann Optik
+                Cammann Optik e. K.
               </p>
               <p>
                 Inhaber: Ismaeel Sheikh Ali (Augenoptikermeister)<br />
                 Königstraße 44<br />
                 30175 Hannover<br />
-                Deutschland
+                Deutschland<br />
+                <span className="text-xs text-[#161719]/60 font-mono">Handelsregister: Amtsgericht Hannover, HRA 207023</span>
               </p>
               <p className="pt-2">
                 Telefon: <a href={`tel:${contactInfo.phone}`} className="text-[#D13426] font-mono hover:underline">{contactInfo.phoneDisplay}</a><br />

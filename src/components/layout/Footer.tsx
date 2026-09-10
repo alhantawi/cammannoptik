@@ -140,7 +140,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#161719]/40 dark:text-white/40 border-t border-[#161719]/10 dark:border-white/10 pt-8 gap-4">
-          <p>© {new Date().getFullYear()} Cammann Optik Hannover. Inhaber Ismaeel Sheikh Ali.</p>
+          <p>© {new Date().getFullYear()} Cammann Optik e. K. Hannover · Inhaber: Ismaeel Sheikh Ali</p>
           <div className="flex items-center gap-6">
             <a href="/impressum" className="hover:text-[#161719] dark:hover:text-white transition-colors">
               Impressum
