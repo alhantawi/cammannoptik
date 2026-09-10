@@ -67,8 +67,8 @@ export const Footer: React.FC = () => {
                   href={`tel:${contactInfo.phone}`}
                   className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
-                    <Phone size={14} />
+                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors shrink-0 aspect-square">
+                    <Phone size={14} className="shrink-0" />
                   </div>
                   <span className="font-mono text-xs">{contactInfo.phoneDisplay}</span>
                 </a>
@@ -78,10 +78,10 @@ export const Footer: React.FC = () => {
                   href={`mailto:${contactInfo.email}`}
                   className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors">
-                    <Mail size={14} />
+                  <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] group-hover:bg-[#D13426] group-hover:text-white transition-colors shrink-0 aspect-square">
+                    <Mail size={14} className="shrink-0" />
                   </div>
-                  <span>{contactInfo.email}</span>
+                  <span className="text-xs break-all group-hover:text-[#D13426] transition-colors">{contactInfo.email}</span>
                 </a>
               </li>
               <li>
@@ -91,8 +91,8 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-[#161719] dark:hover:text-white transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+                  <div className="w-8 h-8 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors shrink-0 aspect-square">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current shrink-0">
                       <path d="M12.031 2C6.516 2 2.031 6.484 2.031 12c0 1.945.555 3.766 1.516 5.312L2 22l4.828-1.5c1.484.844 3.203 1.344 5.203 1.344 5.516 0 10-4.484 10-10S17.547 2 12.031 2zm0 18.281c-1.75 0-3.375-.484-4.781-1.328l-.344-.203-2.859.89.906-2.781-.219-.36c-.953-1.469-1.469-3.172-1.469-4.969 0-4.562 3.719-8.281 8.281-8.281 4.562 0 8.281 3.719 8.281 8.281 0 4.562-3.719 8.281-8.281 8.281zm4.531-6.203c-.25-.125-1.469-.719-1.703-.797-.234-.094-.406-.141-.578.125-.172.266-.672.797-.828.969-.156.172-.313.187-.563.063-.25-.125-1.047-.391-2-1.234-.734-.656-1.234-1.469-1.375-1.719-.141-.25-.016-.391.109-.516.109-.109.25-.281.375-.422.125-.141.172-.234.25-.391.078-.156.031-.313-.016-.438-.047-.125-.578-1.391-.797-1.906-.219-.516-.438-.438-.578-.438h-.5c-.172 0-.453.063-.688.313-.234.25-.906.89-.906 2.172 0 1.281.938 2.516 1.063 2.688.125.172 1.844 2.812 4.469 3.938.625.266 1.109.438 1.484.563.625.203 1.203.172 1.656.109.516-.078 1.469-.609 1.672-1.203.203-.594.203-1.094.141-1.203-.063-.109-.234-.172-.484-.297z" />
                     </svg>
                   </div>
@@ -100,8 +100,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] shrink-0 mt-0.5">
-                  <MapPin size={14} />
+                <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-[#D13426] shrink-0 aspect-square mt-0.5">
+                  <MapPin size={14} className="shrink-0" />
                 </div>
                 <span className="text-xs leading-relaxed">
                   {contactInfo.address.street}
